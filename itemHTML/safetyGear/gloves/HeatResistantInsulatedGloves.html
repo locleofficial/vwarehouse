@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@100;300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/scss/app.scss">
+    <!-- app.css -->
+    <link rel="icon" href="/image/vwarehouse_Vlogo.png">
+    <title>Vwarehouse</title>
+</head>
+
+<body class="item-background">
+    <nav class="topNav" aria-label="primary navigation">
+        <button class="topNav__sideMenuToggle" aria-controls="secondary-navigation" aria-expanded="false">
+            <span class="material-symbols-outlined sideMenu_icon-open">menu</span>
+        </button>
+        <header class="topNav__header">
+            <svg class="logo topNav__logo" id="a" xmlns="http://www.w3.org/2000/svg" width="153.74" height="46.99"
+                viewBox="0 0 153.74 46.99">
+                <g id="b">
+                    <path d="M9.7,36.02L0,13.39H5.47l8.39,19.96h-2.71L19.79,13.39h5.08l-9.7,22.63h-5.47Z"
+                        fill="#f8961d" />
+                    <g>
+                        <path
+                            d="M17.72,37.38l-4.97-13.37h2.3l4.41,12.11h-1.08l4.59-12.11h2.04l4.49,12.11h-1.06l4.51-12.11h2.17l-4.99,13.37h-2.32l-4.21-11.05h.71l-4.26,11.05h-2.32Z"
+                            fill="#fff" />
+                        <path
+                            d="M41.05,37.53c-.99,0-1.86-.17-2.61-.5-.75-.34-1.32-.8-1.73-1.4-.4-.6-.61-1.27-.61-2.03s.17-1.38,.52-1.97c.34-.59,.91-1.06,1.69-1.41,.78-.35,1.84-.53,3.17-.53h4.24v1.74h-4.14c-1.21,0-2.03,.2-2.45,.61-.42,.4-.63,.89-.63,1.46,0,.66,.26,1.18,.78,1.58,.52,.4,1.24,.59,2.17,.59s1.7-.2,2.38-.61c.68-.4,1.17-.99,1.48-1.77l.48,1.67c-.32,.79-.88,1.42-1.69,1.88-.81,.46-1.82,.69-3.05,.69Zm4.39-.15v-2.83l-.13-.53v-4.82c0-1.03-.3-1.82-.9-2.38-.6-.56-1.49-.84-2.69-.84-.79,0-1.56,.13-2.32,.39s-1.4,.61-1.92,1.05l-1.01-1.82c.69-.55,1.52-.98,2.48-1.27,.97-.29,1.98-.44,3.04-.44,1.83,0,3.25,.45,4.24,1.34s1.49,2.25,1.49,4.09v8.07h-2.3Z"
+                            fill="#fff" />
+                        <path
+                            d="M52.22,37.38v-13.37h2.32v3.63l-.23-.91c.37-.92,.99-1.63,1.87-2.12,.87-.49,1.95-.73,3.23-.73v2.35c-.1-.02-.2-.03-.29-.03h-.27c-1.29,0-2.32,.39-3.08,1.16-.76,.77-1.13,1.89-1.13,3.36v6.66h-2.42Z"
+                            fill="#fff" />
+                        <path
+                            d="M68.21,37.53c-1.43,0-2.69-.29-3.77-.88-1.08-.59-1.93-1.4-2.52-2.42-.6-1.03-.9-2.2-.9-3.53s.29-2.51,.87-3.53,1.38-1.83,2.4-2.41c1.02-.58,2.16-.87,3.44-.87s2.44,.29,3.43,.86c.99,.57,1.77,1.38,2.33,2.41s.84,2.24,.84,3.62c0,.1,0,.22-.01,.35s-.02,.26-.04,.38h-11.38v-1.74h10.11l-.98,.61c.02-.86-.16-1.62-.53-2.29-.37-.67-.88-1.2-1.53-1.58-.65-.38-1.4-.57-2.26-.57s-1.59,.19-2.25,.57c-.66,.38-1.17,.91-1.54,1.59-.37,.68-.55,1.46-.55,2.33v.4c0,.89,.21,1.69,.62,2.38,.41,.7,.99,1.24,1.73,1.63,.74,.39,1.59,.58,2.55,.58,.79,0,1.51-.13,2.16-.4,.65-.27,1.21-.67,1.7-1.21l1.34,1.56c-.61,.71-1.36,1.24-2.26,1.61s-1.9,.55-3.01,.55Z"
+                            fill="#fff" />
+                        <path
+                            d="M84.83,23.88c1.09,0,2.06,.21,2.89,.63,.83,.42,1.48,1.06,1.96,1.92,.47,.86,.71,1.94,.71,3.25v7.69h-2.42v-7.42c0-1.29-.32-2.27-.95-2.93-.63-.66-1.52-.98-2.66-.98-.86,0-1.61,.17-2.25,.5-.64,.34-1.13,.83-1.48,1.49-.34,.66-.52,1.47-.52,2.45v6.89h-2.42V18.66h2.42v8.96l-.48-.96c.44-.87,1.11-1.55,2.02-2.04,.91-.49,1.97-.73,3.18-.73Z"
+                            fill="#fff" />
+                        <path
+                            d="M100.6,37.53c-1.33,0-2.52-.29-3.57-.88-1.05-.59-1.88-1.4-2.48-2.43s-.91-2.21-.91-3.52,.3-2.5,.91-3.52,1.43-1.82,2.47-2.41c1.04-.59,2.24-.88,3.58-.88s2.52,.29,3.57,.87,1.88,1.38,2.47,2.41,.9,2.2,.9,3.53-.3,2.51-.9,3.53-1.42,1.83-2.47,2.42c-1.05,.59-2.24,.88-3.57,.88Zm0-2.12c.86,0,1.63-.19,2.31-.58,.68-.39,1.21-.94,1.6-1.65s.58-1.54,.58-2.48-.19-1.79-.58-2.48c-.39-.7-.92-1.24-1.6-1.63-.68-.39-1.45-.58-2.31-.58s-1.62,.19-2.29,.58-1.21,.93-1.61,1.63c-.4,.7-.61,1.53-.61,2.48s.2,1.77,.61,2.48,.94,1.27,1.61,1.65,1.44,.58,2.29,.58Z"
+                            fill="#fff" />
+                        <path
+                            d="M116.52,37.53c-1.14,0-2.15-.21-3.01-.63-.87-.42-1.54-1.06-2.02-1.93-.48-.87-.72-1.96-.72-3.27v-7.69h2.42v7.42c0,1.31,.32,2.29,.95,2.95,.63,.66,1.52,.98,2.66,.98,.84,0,1.57-.17,2.19-.52,.62-.34,1.1-.85,1.44-1.51,.34-.66,.5-1.47,.5-2.41v-6.91h2.42v13.37h-2.3v-3.61l.38,.96c-.44,.89-1.09,1.58-1.97,2.07-.87,.49-1.86,.73-2.95,.73Z"
+                            fill="#fff" />
+                        <path
+                            d="M131.8,37.53c-1.11,0-2.17-.15-3.17-.45-1-.3-1.79-.67-2.36-1.11l1.01-1.92c.57,.39,1.28,.71,2.12,.98,.84,.27,1.7,.4,2.57,.4,1.13,0,1.94-.16,2.43-.48,.5-.32,.74-.77,.74-1.34,0-.42-.15-.75-.45-.98-.3-.23-.7-.41-1.2-.53-.5-.12-1.05-.22-1.65-.32-.61-.09-1.21-.21-1.82-.35s-1.16-.34-1.66-.61c-.5-.26-.91-.62-1.21-1.08-.3-.46-.45-1.08-.45-1.85s.23-1.51,.68-2.12,1.1-1.07,1.93-1.4c.83-.33,1.82-.49,2.96-.49,.87,0,1.76,.11,2.66,.32,.9,.21,1.63,.51,2.21,.9l-1.03,1.92c-.61-.4-1.24-.68-1.89-.83-.66-.15-1.31-.23-1.97-.23-1.06,0-1.85,.17-2.37,.52-.52,.35-.78,.79-.78,1.32,0,.45,.16,.8,.47,1.05,.31,.24,.71,.43,1.21,.57,.5,.13,1.05,.25,1.65,.34,.61,.09,1.21,.21,1.82,.35s1.16,.34,1.65,.59c.5,.25,.9,.61,1.21,1.06,.31,.45,.47,1.06,.47,1.82,0,.81-.24,1.5-.71,2.09s-1.13,1.05-1.99,1.38c-.86,.33-1.88,.49-3.08,.49Z"
+                            fill="#fff" />
+                        <path
+                            d="M146.56,37.53c-1.43,0-2.69-.29-3.77-.88-1.08-.59-1.93-1.4-2.52-2.42-.6-1.03-.9-2.2-.9-3.53s.29-2.51,.87-3.53,1.38-1.83,2.4-2.41c1.02-.58,2.16-.87,3.44-.87s2.44,.29,3.43,.86c.99,.57,1.77,1.38,2.33,2.41s.84,2.24,.84,3.62c0,.1,0,.22-.01,.35s-.02,.26-.04,.38h-11.38v-1.74h10.11l-.98,.61c.02-.86-.16-1.62-.53-2.29-.37-.67-.88-1.2-1.53-1.58-.65-.38-1.4-.57-2.26-.57s-1.59,.19-2.25,.57c-.66,.38-1.17,.91-1.54,1.59-.37,.68-.55,1.46-.55,2.33v.4c0,.89,.21,1.69,.62,2.38,.41,.7,.99,1.24,1.73,1.63,.74,.39,1.59,.58,2.55,.58,.79,0,1.51-.13,2.16-.4,.65-.27,1.21-.67,1.7-1.21l1.34,1.56c-.61,.71-1.36,1.24-2.26,1.61s-1.9,.55-3.01,.55Z"
+                            fill="#fff" />
+                    </g>
+                    <polygon id="c"
+                        points="35.19 10.27 30.42 10.32 28.94 5.75 27.59 10.34 22.84 10.28 26.72 13.05 25.1 17.65 29 14.72 32.91 17.76 31.32 12.99 35.19 10.27"
+                        fill="#f8961d" />
+                </g>
+            </svg>
+        </header>
+        <div class="searchBar topNav__searchBar">
+            <input type="text" class="searchBar__input" id="search" placeholder="search for items..."
+                aria-label="search" />
+            <button class="searchBar__submit" id="submitSearch">
+                <span class="material-symbols-outlined  searchBar__submitIcon" aria-label="submit search">search</span>
+            </button>
+            <ul class="matchList" id="match-list" role="list">
+            </ul>
+        </div>
+        <div class="topNav__linkBox">
+            <a class="topNav__link topNav_mobileLink-icon material-icons" material_icon-name="home"
+                href="/home.html">home</a>
+            <a class="topNav__link topNav_mobileLink-icon material-icons" material_icon-name="call"
+                href="/contact.html">contact</a>
+        </div>
+        <div class="topNav-cover">
+        </div>
+    </nav>
+    <div class="sideNav-container">
+        <nav class="sideNav" data-visible="false" aria-label="secondary navigation">
+            <button class="sideNav__sideMenuToggle" aria-control="secondary-navigation" aria-expanded="true">
+                <span class="material-symbols-outlined sideMenu_icon-close">close</span>
+            </button>
+            <header class="sideNav__header">
+                <svg class="logo sideNav__logo" id="a" xmlns="http://www.w3.org/2000/svg" width="153.74" height="46.99"
+                    viewBox="0 0 153.74 46.99">
+                    <g id="b">
+                        <path d="M9.7,36.02L0,13.39H5.47l8.39,19.96h-2.71L19.79,13.39h5.08l-9.7,22.63h-5.47Z"
+                            fill="#f8961d" />
+                        <g>
+                            <path
+                                d="M17.72,37.38l-4.97-13.37h2.3l4.41,12.11h-1.08l4.59-12.11h2.04l4.49,12.11h-1.06l4.51-12.11h2.17l-4.99,13.37h-2.32l-4.21-11.05h.71l-4.26,11.05h-2.32Z"
+                                fill="#fff" />
+                            <path
+                                d="M41.05,37.53c-.99,0-1.86-.17-2.61-.5-.75-.34-1.32-.8-1.73-1.4-.4-.6-.61-1.27-.61-2.03s.17-1.38,.52-1.97c.34-.59,.91-1.06,1.69-1.41,.78-.35,1.84-.53,3.17-.53h4.24v1.74h-4.14c-1.21,0-2.03,.2-2.45,.61-.42,.4-.63,.89-.63,1.46,0,.66,.26,1.18,.78,1.58,.52,.4,1.24,.59,2.17,.59s1.7-.2,2.38-.61c.68-.4,1.17-.99,1.48-1.77l.48,1.67c-.32,.79-.88,1.42-1.69,1.88-.81,.46-1.82,.69-3.05,.69Zm4.39-.15v-2.83l-.13-.53v-4.82c0-1.03-.3-1.82-.9-2.38-.6-.56-1.49-.84-2.69-.84-.79,0-1.56,.13-2.32,.39s-1.4,.61-1.92,1.05l-1.01-1.82c.69-.55,1.52-.98,2.48-1.27,.97-.29,1.98-.44,3.04-.44,1.83,0,3.25,.45,4.24,1.34s1.49,2.25,1.49,4.09v8.07h-2.3Z"
+                                fill="#fff" />
+                            <path
+                                d="M52.22,37.38v-13.37h2.32v3.63l-.23-.91c.37-.92,.99-1.63,1.87-2.12,.87-.49,1.95-.73,3.23-.73v2.35c-.1-.02-.2-.03-.29-.03h-.27c-1.29,0-2.32,.39-3.08,1.16-.76,.77-1.13,1.89-1.13,3.36v6.66h-2.42Z"
+                                fill="#fff" />
+                            <path
+                                d="M68.21,37.53c-1.43,0-2.69-.29-3.77-.88-1.08-.59-1.93-1.4-2.52-2.42-.6-1.03-.9-2.2-.9-3.53s.29-2.51,.87-3.53,1.38-1.83,2.4-2.41c1.02-.58,2.16-.87,3.44-.87s2.44,.29,3.43,.86c.99,.57,1.77,1.38,2.33,2.41s.84,2.24,.84,3.62c0,.1,0,.22-.01,.35s-.02,.26-.04,.38h-11.38v-1.74h10.11l-.98,.61c.02-.86-.16-1.62-.53-2.29-.37-.67-.88-1.2-1.53-1.58-.65-.38-1.4-.57-2.26-.57s-1.59,.19-2.25,.57c-.66,.38-1.17,.91-1.54,1.59-.37,.68-.55,1.46-.55,2.33v.4c0,.89,.21,1.69,.62,2.38,.41,.7,.99,1.24,1.73,1.63,.74,.39,1.59,.58,2.55,.58,.79,0,1.51-.13,2.16-.4,.65-.27,1.21-.67,1.7-1.21l1.34,1.56c-.61,.71-1.36,1.24-2.26,1.61s-1.9,.55-3.01,.55Z"
+                                fill="#fff" />
+                            <path
+                                d="M84.83,23.88c1.09,0,2.06,.21,2.89,.63,.83,.42,1.48,1.06,1.96,1.92,.47,.86,.71,1.94,.71,3.25v7.69h-2.42v-7.42c0-1.29-.32-2.27-.95-2.93-.63-.66-1.52-.98-2.66-.98-.86,0-1.61,.17-2.25,.5-.64,.34-1.13,.83-1.48,1.49-.34,.66-.52,1.47-.52,2.45v6.89h-2.42V18.66h2.42v8.96l-.48-.96c.44-.87,1.11-1.55,2.02-2.04,.91-.49,1.97-.73,3.18-.73Z"
+                                fill="#fff" />
+                            <path
+                                d="M100.6,37.53c-1.33,0-2.52-.29-3.57-.88-1.05-.59-1.88-1.4-2.48-2.43s-.91-2.21-.91-3.52,.3-2.5,.91-3.52,1.43-1.82,2.47-2.41c1.04-.59,2.24-.88,3.58-.88s2.52,.29,3.57,.87,1.88,1.38,2.47,2.41,.9,2.2,.9,3.53-.3,2.51-.9,3.53-1.42,1.83-2.47,2.42c-1.05,.59-2.24,.88-3.57,.88Zm0-2.12c.86,0,1.63-.19,2.31-.58,.68-.39,1.21-.94,1.6-1.65s.58-1.54,.58-2.48-.19-1.79-.58-2.48c-.39-.7-.92-1.24-1.6-1.63-.68-.39-1.45-.58-2.31-.58s-1.62,.19-2.29,.58-1.21,.93-1.61,1.63c-.4,.7-.61,1.53-.61,2.48s.2,1.77,.61,2.48,.94,1.27,1.61,1.65,1.44,.58,2.29,.58Z"
+                                fill="#fff" />
+                            <path
+                                d="M116.52,37.53c-1.14,0-2.15-.21-3.01-.63-.87-.42-1.54-1.06-2.02-1.93-.48-.87-.72-1.96-.72-3.27v-7.69h2.42v7.42c0,1.31,.32,2.29,.95,2.95,.63,.66,1.52,.98,2.66,.98,.84,0,1.57-.17,2.19-.52,.62-.34,1.1-.85,1.44-1.51,.34-.66,.5-1.47,.5-2.41v-6.91h2.42v13.37h-2.3v-3.61l.38,.96c-.44,.89-1.09,1.58-1.97,2.07-.87,.49-1.86,.73-2.95,.73Z"
+                                fill="#fff" />
+                            <path
+                                d="M131.8,37.53c-1.11,0-2.17-.15-3.17-.45-1-.3-1.79-.67-2.36-1.11l1.01-1.92c.57,.39,1.28,.71,2.12,.98,.84,.27,1.7,.4,2.57,.4,1.13,0,1.94-.16,2.43-.48,.5-.32,.74-.77,.74-1.34,0-.42-.15-.75-.45-.98-.3-.23-.7-.41-1.2-.53-.5-.12-1.05-.22-1.65-.32-.61-.09-1.21-.21-1.82-.35s-1.16-.34-1.66-.61c-.5-.26-.91-.62-1.21-1.08-.3-.46-.45-1.08-.45-1.85s.23-1.51,.68-2.12,1.1-1.07,1.93-1.4c.83-.33,1.82-.49,2.96-.49,.87,0,1.76,.11,2.66,.32,.9,.21,1.63,.51,2.21,.9l-1.03,1.92c-.61-.4-1.24-.68-1.89-.83-.66-.15-1.31-.23-1.97-.23-1.06,0-1.85,.17-2.37,.52-.52,.35-.78,.79-.78,1.32,0,.45,.16,.8,.47,1.05,.31,.24,.71,.43,1.21,.57,.5,.13,1.05,.25,1.65,.34,.61,.09,1.21,.21,1.82,.35s1.16,.34,1.65,.59c.5,.25,.9,.61,1.21,1.06,.31,.45,.47,1.06,.47,1.82,0,.81-.24,1.5-.71,2.09s-1.13,1.05-1.99,1.38c-.86,.33-1.88,.49-3.08,.49Z"
+                                fill="#fff" />
+                            <path
+                                d="M146.56,37.53c-1.43,0-2.69-.29-3.77-.88-1.08-.59-1.93-1.4-2.52-2.42-.6-1.03-.9-2.2-.9-3.53s.29-2.51,.87-3.53,1.38-1.83,2.4-2.41c1.02-.58,2.16-.87,3.44-.87s2.44,.29,3.43,.86c.99,.57,1.77,1.38,2.33,2.41s.84,2.24,.84,3.62c0,.1,0,.22-.01,.35s-.02,.26-.04,.38h-11.38v-1.74h10.11l-.98,.61c.02-.86-.16-1.62-.53-2.29-.37-.67-.88-1.2-1.53-1.58-.65-.38-1.4-.57-2.26-.57s-1.59,.19-2.25,.57c-.66,.38-1.17,.91-1.54,1.59-.37,.68-.55,1.46-.55,2.33v.4c0,.89,.21,1.69,.62,2.38,.41,.7,.99,1.24,1.73,1.63,.74,.39,1.59,.58,2.55,.58,.79,0,1.51-.13,2.16-.4,.65-.27,1.21-.67,1.7-1.21l1.34,1.56c-.61,.71-1.36,1.24-2.26,1.61s-1.9,.55-3.01,.55Z"
+                                fill="#fff" />
+                        </g>
+                        <polygon id="c"
+                            points="35.19 10.27 30.42 10.32 28.94 5.75 27.59 10.34 22.84 10.28 26.72 13.05 25.1 17.65 29 14.72 32.91 17.76 31.32 12.99 35.19 10.27"
+                            fill="#f8961d" />
+                    </g>
+                </svg>
+            </header>
+            <div class="sideNav__body">
+                <ul class="menuList menuList_hold_mainOption" id="mainMenuList" role="list">
+                    <li>
+                        <div class="menuItem menuItem__title mainOption_title">
+                            <h3 class="menuItem__text menuItem__title-text">Category</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="menuItem mainOption" href="#subMenuList01">
+                            <span class="material-symbols-outlined menuItem__icon mainOption__icon">handyman</span>
+                            <h4 class="menuItem__text mainOption__text">Hand Tool</h4>
+                            <span class="material-symbols-outlined menuItem__arow mainOption__arrow">
+                                chevron_right
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menuItem mainOption" href="#subMenuList02">
+                            <span
+                                class="material-symbols-outlined menuItem__icon mainOption__icon">electrical_services</span>
+                            <h4 class="menuItem__text mainOption__text">Power Tool</h4>
+                            <span class="material-symbols-outlined menuItem__arow mainOption__arrow">
+                                chevron_right
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menuItem mainOption" href="#subMenuList03">
+                            <span class="material-symbols-outlined menuItem__icon mainOption__icon">security</span>
+                            <h4 class="menuItem__text mainOption__text">Safety Gear</h4>
+                            <span class="material-symbols-outlined menuItem__arow mainOption__arrow">
+                                chevron_right
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="menuList menuList_hold_subOption" id="subMenuList01" role="list">
+                    <li>
+                        <a class="menuItem homeOption" href="#mainMenuList">
+                            <span class="material-symbols-outlined menuItem__icon homeOption__icon">
+                                keyboard_backspace
+                            </span>
+                            <h5 class="menuItem__text homeOption__text">main menu</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="menuItem menuItem__title subOption_title">
+                            <span class="material-symbols-outlined menuItem__icon subOption_title_icon">handyman</span>
+                            <h3 class="menuItem__text menuItem__title-text">Hand Tool</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="menuItem subOption" href="/itemHTML/handTool/wrenches/wrenches.html">
+                            <h4 class="menuItem__text subOption__text">Wrenches</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menuItem subOption" href="/itemHTML/handTool/pliers/pliers.html">
+                            <h4 class="menuItem__text subOption__text">Pliers</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menuItem subOption" href="/itemHTML/handTool/hammers/hammers.html">
+                            <h4 class="menuItem__text subOption__text">Hammer</h4>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="menuList menuList_hold_subOption" id="subMenuList02" role="list">
+                    <li>
+                        <a class="menuItem homeOption" href="#mainMenuList">
+                            <span class="material-symbols-outlined menuItem__icon homeOption__icon">
+                                keyboard_backspace
+                            </span>
+                            <h5 class="menuItem__text homeOption__text">main menu</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="menuItem menuItem__title subOption_title">
+                            <span
+                                class="material-symbols-outlined menuItem__icon subOption_title_icon">electrical_services</span>
+                            <h3 class="menuItem__text menuItem__title-text">Power Tool</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="menuItem subOption" href="/itemHTML/powerTool/drills/drills.html">
+                            <h4 class="menuItem__text subOption__text">Drills</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menuItem subOption" href="/itemHTML/powerTool/saws/saws.html">
+                            <h4 class="menuItem__text subOption__text">Saws</h4>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="menuList menuList_hold_subOption" id="subMenuList03" role="list">
+                    <li>
+                        <a class="menuItem homeOption" href="#mainMenuList">
+                            <span class="material-symbols-outlined menuItem__icon homeOption__icon">
+                                keyboard_backspace
+                            </span>
+                            <h5 class="menuItem__text homeOption__text">main menu</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="menuItem menuItem__title subOption_title">
+                            <span class="material-symbols-outlined menuItem__icon subOption_title_icon">security</span>
+                            <h3 class="menuItem__text menuItem__title-text">Safety Gear</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="menuItem subOption" href="/itemHTML/safetyGear/boots/boots.html">
+                            <h4 class="menuItem__text subOption__text">Boots</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menuItem subOption" href="/itemHTML/safetyGear/gloves/gloves.html">
+                            <h4 class="menuItem__text subOption__text">Gloves</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menuItem subOption" href="/itemHTML/safetyGear/goggles/goggles.html">
+                            <h4 class="menuItem__text subOption__text">Goggles</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menuItem subOption" href="/itemHTML/safetyGear/helmets/helmets.html">
+                            <h4 class="menuItem__text subOption__text">Helmets</h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="sideNav-cover"></div>
+    </div>
+    <div class="item-flex">
+        <div class="item-flex__image-item">
+            <!-- full size -->
+            <picture class="item-card__imgBox">
+                <img width="657" height="438" class="item-card__img"
+                    src="/image/itemImage/safetyGear/gloves/HeatResistantInsulatedGloves/HeatResistantInsulatedGloves_01.jpg"
+                    alt="Heat Resistant Insulated Gloves">
+            </picture>
+
+            <!-- thumbnail -->
+            <div class="thumbnail">
+                <div class="thumbnail__prev">
+                    <span class="prev_icon material-symbols-outlined">
+                        chevron_left
+                    </span>
+                </div>
+                <ul class="thumbnail-flex" role="list">
+                    <li>
+                        <a class="thumbnail__link"
+                            href="/image/itemImage/safetyGear/gloves/HeatResistantInsulatedGloves/HeatResistantInsulatedGloves_01.jpg">
+                            <img width="80" height="80" class="thumbnail__img img-focus"
+                                src="/image/itemImage/safetyGear/gloves/HeatResistantInsulatedGloves/thumb/HeatResistantInsulatedGloves_01.jpg"
+                                alt="Heat Resistant Insulated Gloves">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumbnail__link"
+                            href="/image/itemImage/safetyGear/gloves/HeatResistantInsulatedGloves/HeatResistantInsulatedGloves_02.jpg">
+                            <img width="80" height="80" class="thumbnail__img"
+                                src="/image/itemImage/safetyGear/gloves/HeatResistantInsulatedGloves/thumb/HeatResistantInsulatedGloves_02.jpg"
+                                alt="Heat Resistant Insulated Gloves">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumbnail__link"
+                            href="/image/itemImage/safetyGear/gloves/HeatResistantInsulatedGloves/HeatResistantInsulatedGloves_03.jpg">
+                            <img width="80" height="80" class="thumbnail__img"
+                                src="/image/itemImage/safetyGear/gloves/HeatResistantInsulatedGloves/thumb/HeatResistantInsulatedGloves_03.jpg"
+                                alt="Heat Resistant Insulated Gloves">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumbnail__link"
+                            href="/image/itemImage/safetyGear/gloves/HeatResistantInsulatedGloves/HeatResistantInsulatedGloves_04.jpg">
+                            <img width="80" height="80" class="thumbnail__img"
+                                src="/image/itemImage/safetyGear/gloves/HeatResistantInsulatedGloves/thumb/HeatResistantInsulatedGloves_04.jpg"
+                                alt="Heat Resistant Insulated Gloves">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumbnail__link"
+                            href="/image/itemImage/safetyGear/gloves/HeatResistantInsulatedGloves/HeatResistantInsulatedGloves_05.jpg">
+                            <img width="80" height="80" class="thumbnail__img"
+                                src="/image/itemImage/safetyGear/gloves/HeatResistantInsulatedGloves/thumb/HeatResistantInsulatedGloves_05.jpg"
+                                alt="Heat Resistant Insulated Gloves">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumbnail__link"
+                            href="/image/itemImage/safetyGear/gloves/HeatResistantInsulatedGloves/HeatResistantInsulatedGloves_06.jpg">
+                            <img width="80" height="80" class="thumbnail__img"
+                                src="/image/itemImage/safetyGear/gloves/HeatResistantInsulatedGloves/thumb/HeatResistantInsulatedGloves_06.jpg"
+                                alt="Heat Resistant Insulated Gloves">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumbnail__link"
+                            href="/image/itemImage/safetyGear/gloves/HeatResistantInsulatedGloves/HeatResistantInsulatedGloves_07.jpg">
+                            <img width="80" height="80" class="thumbnail__img"
+                                src="/image/itemImage/safetyGear/gloves/HeatResistantInsulatedGloves/thumb/HeatResistantInsulatedGloves_07.jpg"
+                                alt="Heat Resistant Insulated Gloves">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumbnail__link"
+                            href="/image/itemImage/safetyGear/gloves/HeatResistantInsulatedGloves/HeatResistantInsulatedGloves_08.jpg">
+                            <img width="80" height="80" class="thumbnail__img"
+                                src="/image/itemImage/safetyGear/gloves/HeatResistantInsulatedGloves/thumb/HeatResistantInsulatedGloves_08.jpg"
+                                alt="Heat Resistant Insulated Gloves">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumbnail__link"
+                            href="/image/itemImage/safetyGear/gloves/HeatResistantInsulatedGloves/HeatResistantInsulatedGloves_09.jpg">
+                            <img width="80" height="80" class="thumbnail__img"
+                                src="/image/itemImage/safetyGear/gloves/HeatResistantInsulatedGloves/thumb/HeatResistantInsulatedGloves_09.jpg"
+                                alt="Heat Resistant Insulated Gloves">
+                        </a>
+                    </li>
+                </ul>
+                <div class="thumbnail__next">
+                    <span class="next_icon material-symbols-outlined">
+                        chevron_right
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="item-flex__info-item">
+            <div class="item-card__info">
+                <ul class="title" role="list">
+                    <li>
+                        <h4 class="title__brand">HARDY</h4>
+                    </li>
+                    <li>
+                        <h2 class="title__name">Heat Resistant Insulated Gloves</h2>
+                    </li>
+                    <li>
+                        <h1 class="title__price">&dollar;19.99</h1>
+                    </li>
+                </ul>
+                <div class="overview">
+                    <h4 class="h4-default overview__header">Overview</h4>
+                    <ul class="overview__body" role="list">
+                        <li>
+                            <p>Condition: <span class="condition">
+                                    Brand New</span></p>
+                        </li>
+                        <li>
+                            <p>Brand: <span class="brand">HARDY</span></p>
+                        </li>
+                        <li>
+                            <p>Product Type: <span class="type">Gloves</span></p>
+                        </li>
+                        <li>
+                            <p>Availability: <span class="available">Available</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="description">
+                    <h3 class="h3-default description__header">Description</h3>
+                    <p class="p-default description__paragraph">Protect your hands while grilling or handling hot items
+                        with these insulated, heat-resistant gloves.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/js/matchList.js">
+</script>
+<script src="/js/sideNav.js">
+</script>
+<script src="/js/sideNavToggle.js">
+</script>
+<script src="/js/thumbnail.js">
+</script>
+
+</html>

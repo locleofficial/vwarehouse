@@ -1,0 +1,266 @@
+{
+  "availableItems": [
+    {
+      "name": "16 oz. Fiberglass Rip Hammer",
+      "type": "hammer",
+      "shortName": "Rip Hammer",
+      "brand": "pittsburgh",
+      "url": "/itemHTML/handTool/hammers/16ozFiberglassRipHammer.html",
+      "thumbnail": "/image/itemThumbnail/handTool/hammers/16ozFiberglassRipHammer/16ozFiberglassRipHammer_160x160.jpg"
+    },
+    {
+      "name": "25 oz. California Framing Hammer",
+      "type": "hammer",
+      "shortName": "Framing Hammer",
+      "brand": "pittsburgh",
+      "url": "/itemHTML/handTool/hammers/25ozCaliforniaFramingHammer.html",
+      "thumbnail": "/image/itemThumbnail/handTool/hammers/25ozCaliforniaFramingHammer/25ozCaliforniaFramingHammer_160x160.jpg"
+    },
+    {
+      "name": "8 in. Linesman  Plier",
+      "type": "plier",
+      "shortName": "Linesman  Plier",
+      "brand": "pittsburgh",
+      "url": "/itemHTML/handTool/pliers/8inLinesmanPliers.html",
+      "thumbnail": "/image/itemThumbnail/handTool/pliers/8inLinesmanPliers/8inLinesmanPliers_160x160.jpg"
+    },
+    {
+      "name": "8 in. Needle Nose Plier",
+      "type": "plier",
+      "shortName": "Needle Nose Plier",
+      "brand": "pittsburgh",
+      "url": "/itemHTML/handTool/pliers/8inNeedleNosePliers.html",
+      "thumbnail": "/image/itemThumbnail/handTool/pliers/8inNeedleNosePliers/8inNeedleNosePliers_160x160.jpg"
+    },
+    {
+      "name": "8 in. Slip Joint Plier",
+      "type": "plier",
+      "shortName": "Slip Joint Plier",
+      "brand": "pittsburgh",
+      "url": "/itemHTML/handTool/pliers/8inSlipJointPliers.html",
+      "thumbnail": "/image/itemThumbnail/handTool/pliers/8inSlipJointPliers/8inSlipJointPliers_160x160.jpg"
+    },
+    {
+      "name": "10 in. Fast Adjust Water Pump Plier",
+      "type": "plier",
+      "shortName": "Water Pump Plier",
+      "brand": "doyle",
+      "url": "/itemHTML/handTool/pliers/10inFastAdjustWaterPumpPliers.html",
+      "thumbnail": "/image/itemThumbnail/handTool/pliers/10inFastAdjustWaterPumpPliers/10inFastAdjustWaterPumpPliers_160x160.jpg"
+    },
+    {
+      "name": "Anti-Slip Grip Professional Metric Ratcheting Combination Wrench Set, 10 Piece",
+      "type": "wrench",
+      "shortName": "Anti-Slip Ratcheting Wrench",
+      "brand": "icon",
+      "url": "/itemHTML/handTool/wrenches/AntiSlipGripProfessionalMetricRatchetingCombinationWrenchSet10Piece.html",
+      "thumbnail": "/image/itemThumbnail/handTool/wrenches/AntiSlipGripProfessionalMetricRatchetingCombinationWrenchSet10Piece/AntiSlipGripProfessionalMetricRatchetingCombinationWrenchSet10Piece_160x160.jpg"
+    },
+    {
+      "name": "Professional Stubby Metric Ratcheting Combination Wrench Set, 10 Piece",
+      "type": "wrench",
+      "shortName": "Stuby Ratcheting Wrench",
+      "brand": "icon",
+      "url": "/itemHTML/handTool/wrenches/ProfessionalStubbyMetricRatchetingCombinationWrenchSet10Piece.html",
+      "thumbnail": "/image/itemThumbnail/handTool/wrenches/ProfessionalStubbyMetricRatchetingCombinationWrenchSet10Piece/ProfessionalStubbyMetricRatchetingCombinationWrenchSet10Piece_160x160.jpg"
+    },
+
+    {
+      "name": "18V Cordless 3/8 in. Drill/Driver Kit",
+      "type": "drill",
+      "shortName": "Cordless Drill",
+      "brand": "warrior",
+      "url": "/itemHTML/powerTool/drills/18vCordless3-8inDrill-DriverKit.html",
+      "thumbnail": "/image/itemThumbnail/powerTool/drills/18vCordless3-8inDrill-DriverKit/18vCordless3-8inDrill-DriverKit_160x160.jpg"
+    },
+    {
+      "name": "20V Cordless 1/2 in. Compact Variable Speed Hammer Drill/Driver - Tool Only",
+      "type": "drill",
+      "shortName": "Cordless Drill",
+      "brand": "Hercules",
+      "url": "/itemHTML/powerTool/drills/20VCordless1-2inCompactVariableSpeedHammerDrill-Driver-ToolOnly.html",
+      "thumbnail": "/image/itemThumbnail/powerTool/drills/20VCordless1-2inCompactVariableSpeedHammerDrill-Driver-ToolOnly/20VCordless1-2inCompactVariableSpeedHammerDrill-Driver-ToolOnly_160x160.jpg"
+    },
+    {
+      "name": "6 Amp Rotating Handle Variable Speed Reciprocating Saw",
+      "type": "saw",
+      "shortName": "Reciprocating saw",
+      "brand": "warrior",
+      "url": "/itemHTML/powerTool/saws/6AmpRotatingHandleVariableSpeedReciprocatingSaw.html",
+      "thumbnail": "/image/itemThumbnail/powerTool/saws/6AmpRotatingHandleVariableSpeedReciprocatingSaw/6AmpRotatingHandleVariableSpeedReciprocatingSaw_160x160.jpg"
+    },
+    {
+      "name": "15 Amp 3.8 HP 14 in. Abrasive Cut-Off Saw",
+      "type": "saw",
+      "shortName": "Cut Off saw",
+      "brand": "bauer",
+      "url": "/itemHTML/powerTool/saws/15Amp38HP14inAbrasiveCutOffSaw.html",
+      "thumbnail": "/image/itemThumbnail/powerTool/saws/15Amp38HP14inAbrasiveCutOffSaw/15Amp38HP14inAbrasiveCutOffSaw_160x160.jpg"
+    },
+    {
+      "name": "Work Boot/Shoe Covers, 50 Pack",
+      "type": "boot",
+      "shortName": "boot cover",
+      "brand": "ranger",
+      "url": "/itemHTML/safetyGear/boots/WorkBootShoeCovers50Pack.html",
+      "thumbnail": "/image/itemThumbnail/safetyGear/boots/WorkBootShoeCovers50Pack/WorkBootShoeCovers50Pack_160x160.jpg"
+    },
+    {
+      "name": "Heat Resistant Insulated Gloves",
+      "type": "glove",
+      "shortName": "Heat Resistant glove",
+      "brand": "hardy",
+      "url": "/itemHTML/safetyGear/gloves/HeatResistantInsulatedGloves.html",
+      "thumbnail": "/image/itemThumbnail/safetyGear/gloves/HeatResistantInsulatedGloves/HeatResistantInsulatedGloves_160x160.jpg"
+    },
+    {
+      "name": "Professional TIG Welding Gloves, Large",
+      "type": "glove",
+      "shortName": "welding glove",
+      "brand": "vulcan defender",
+      "url": "/itemHTML/safetyGear/gloves/ProfessionalTIGWeldingGlovesLarge.html",
+      "thumbnail": "/image/itemThumbnail/safetyGear/gloves/ProfessionalTIGWeldingGlovesLarge/ProfessionalTIGWeldingGlovesLarge_160x160.jpg"
+    },
+    {
+      "name": "Vinyl Gloves, 100 Pack, Large",
+      "type": "glove",
+      "shortName": "vinyl glove",
+      "brand": "hardy",
+      "url": "/itemHTML/safetyGear/gloves/VinylGloves100PackLarge.html",
+      "thumbnail": "/image/itemThumbnail/safetyGear/gloves/VinylGloves100PackLarge/VinylGloves100PackLarge_160x160.jpg"
+    },
+    {
+      "name": "Heavy Duty Safety Goggles",
+      "type": "goggle",
+      "shortName": "safety goggle",
+      "brand": "ranger",
+      "url": "/itemHTML/safetyGear/goggles/HeavyDutySafetyGoggles.html",
+      "thumbnail": "/image/itemThumbnail/safetyGear/goggles/HeavyDutySafetyGoggles/HeavyDutySafetyGoggles_160x160.jpg"
+    },
+    {
+      "name": "Safety Goggles with Detachable Face Shield",
+      "type": "goggle",
+      "shortName": "face shield",
+      "brand": "ranger",
+      "url": "/itemHTML/safetyGear/goggles/SafetyGoggleswithDetachableFaceShield.html",
+      "thumbnail": "/image/itemThumbnail/safetyGear/goggles/SafetyGoggleswithDetachableFaceShield/SafetyGoggleswithDetachableFaceShield_160x160.jpg"
+    },
+    {
+      "name": "13.5 sq. in. Premium ARCSAFE Auto-Darkening Welding Helmet",
+      "type": "helmet",
+      "shortName": "welding helmet",
+      "brand": "vulcan",
+      "url": "/itemHTML/safetyGear/helmets/135sqinPremiumARCSAFEAutoDarkeningWeldingHelmet.html",
+      "thumbnail": "/image/itemThumbnail/safetyGear/helmets/135sqinPremiumARCSAFEAutoDarkeningWeldingHelmet/135sqinPremiumARCSAFEAutoDarkeningWeldingHelmet_160x160.jpg"
+    },
+    {
+      "name": "Full Brim Ratcheting Type I Hard Hat",
+      "type": "hat",
+      "shortName": "hard hat",
+      "brand": "3m",
+      "url": "/itemHTML/safetyGear/helmets/FullBrimRatchetingTypeIHardHat.html",
+      "thumbnail": "/image/itemThumbnail/safetyGear/helmets/FullBrimRatchetingTypeIHardHat/FullBrimRatchetingTypeIHardHat_160x160.jpg"
+    },
+    {
+      "name": "hammers",
+      "type": "hammers",
+      "shortName": "hammers",
+      "brand": "",
+      "url": "/itemHTML/handTool/hammers/hammers.html",
+      "thumbnail": "/image/itemThumbnail/search-icon.png"
+    },
+    {
+      "name": "pliers",
+      "type": "pliers",
+      "shortName": "pliers",
+      "brand": "",
+      "url": "/itemHTML/handTool/pliers/pliers.html",
+      "thumbnail": "/image/itemThumbnail/search-icon.png"
+    },
+    {
+      "name": "wrenches",
+      "type": "wrenches",
+      "shortName": "wrenches",
+      "brand": "",
+      "url": "/itemHTML/handTool/wrenches/wrenches.html",
+      "thumbnail": "/image/itemThumbnail/search-icon.png"
+    },
+    {
+      "name": "drills",
+      "type": "drills",
+      "shortName": "drills",
+      "brand": "",
+      "url": "/itemHTML/powerTool/drills/drills.html",
+      "thumbnail": "/image/itemThumbnail/search-icon.png"
+    },
+    {
+      "name": "power saws",
+      "type": "saws",
+      "shortName": "power saws",
+      "brand": "",
+      "url": "/itemHTML/powerTool/saws/saws.html",
+      "thumbnail": "/image/itemThumbnail/search-icon.png"
+    },
+    {
+      "name": "boots",
+      "type": "boots",
+      "shortName": "boots",
+      "brand": "",
+      "url": "/itemHTML/safetyGear/boots/boots.html",
+      "thumbnail": "/image/itemThumbnail/search-icon.png"
+    },
+    {
+      "name": "gloves",
+      "type": "gloves",
+      "shortName": "gloves",
+      "brand": "",
+      "url": "/itemHTML/safetyGear/gloves/gloves.html",
+      "thumbnail": "/image/itemThumbnail/search-icon.png"
+    },
+    {
+      "name": "goggles",
+      "type": "goggles",
+      "shortName": "goggles",
+      "brand": "",
+      "url": "/itemHTML/safetyGear/goggles/goggles.html",
+      "thumbnail": "/image/itemThumbnail/search-icon.png"
+    },
+    {
+      "name": "helmets",
+      "type": "helmets",
+      "shortName": "helmets",
+      "brand": "",
+      "url": "/itemHTML/safetyGear/helmets/helmets.html",
+      "thumbnail": "/image/itemThumbnail/search-icon.png"
+    },
+    {
+      "name": "hand tools",
+      "type": "hand tools",
+      "shortName": "tools",
+      "brand": "",
+      "url": "/itemHTML/handTool/handTool.html",
+      "thumbnail": "/image/itemThumbnail/search-icon.png"
+    },
+    {
+      "name": "power tools",
+      "type": "power tools",
+      "shortName": "tools",
+      "brand": "",
+      "url": "/itemHTML/powerTool/powerTool.html",
+      "thumbnail": "/image/itemThumbnail/search-icon.png"
+    },
+    {
+      "name": "safety gears",
+      "type": "safety gears",
+      "shortName": "gears",
+      "brand": "",
+      "url": "/itemHTML/safetyGear/safetyGear.html",
+      "thumbnail": "/image/itemThumbnail/search-icon.png"
+    }
+  ],
+  "unavailableItems": [
+    {
+      "url": "/unavailable.html"
+    }
+  ]
+}
