@@ -1,2 +1,2 @@
 # vwarehouse
-![HOME!](https://github.com/locleofficial/vwarehouse/blob/main/ResizedDemoImage/1-home.png | width=265)
+![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png | width=100)
