@@ -1,5 +1,5 @@
 # vwarehouse
 <div align="center">
   <img src="https://github.com/locleofficial/vwarehouse/blob/main/ResizedDemoImage/1-home.png" width="265" height="500">
-  <h3>HOME</h3>
+  <h1>HOME</h1>
 </div>
