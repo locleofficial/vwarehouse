@@ -12,9 +12,9 @@
 </div>
 
 
-<h2>ITEM CATEGORY PAGE</h2>
+<h2>ITEM PAGE</h2>
 <div align="center">
-  <img src="https://github.com/locleofficial/vwarehouse/blob/main/ResizedDemoImage/3-category.png" width="265" height="500">
+  <img src="https://github.com/locleofficial/vwarehouse/blob/main/ResizedDemoImage/4-item.png" width="265" height="500">
 </div>
   
   </div>
