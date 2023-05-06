@@ -1,0 +1,243 @@
+@use "../abstracts" as *;
+@use "../core" as *;
+
+.form {
+  background-color: $secondary_clr-dark;
+  background-color: rgba($color: $secondary_clr-dark, $alpha: 0.7);
+  color: white;
+  max-width: 700px;
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-top: 25px;
+  padding-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__header {
+    font-weight: weight("medium");
+  }
+  &__labelInput-list {
+    .labelInput {
+      margin-top: 14px;
+      margin-bottom: 14px;
+      &__label {
+        font-weight: weight("light");
+      }
+      &__input {
+        display: block;
+        min-height: 40px;
+        height: 50px;
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-overflow: ellipsis;
+      }
+    }
+    .labelTextarea {
+      margin-top: 14px;
+      margin-bottom: 14px;
+      &__label {
+        display: block;
+        font-weight: weight("light");
+      }
+      &__textarea {
+        padding-top: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        height: 300px;
+        width: 100%;
+        border: none;
+      }
+    }
+  }
+  &__button {
+    position: relative;
+    height: 50px;
+    border-radius: calc(50px / 2);
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: weight("medium");
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 0;
+    &::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      min-width: 100%;
+      min-height: 100%;
+      border-radius: calc(50px / 2);
+      opacity: 1;
+      background-color: $primary-clr;
+      transition: opacity 100ms ease-in-out;
+      z-index: -1;
+    }
+    &:hover {
+      box-shadow: 0 0 0 2px white;
+    }
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}
+
+@include screenSmallerThan($width: 1501px) {
+  .form {
+    &__header {
+    }
+    &__labelInput-list {
+      .labelInput {
+        &__label {
+        }
+        &__input {
+        }
+      }
+      .labelTextarea {
+        &__label {
+        }
+        &__textarea {
+        }
+      }
+    }
+    &__button {
+    }
+  }
+}
+
+@include screenSmallerThan($width: 1201px) {
+  .form {
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 25px;
+    padding-bottom: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    &__header {
+    }
+    &__labelInput-list {
+      .labelInput {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        &__label {
+        }
+        &__input {
+          height: 45px;
+        }
+      }
+      .labelTextarea {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        &__label {
+        }
+        &__textarea {
+          height: 250px;
+        }
+      }
+    }
+    &__button {
+      height: 45px;
+    }
+  }
+}
+
+@include screenSmallerThan($width: 1025px) {
+  .form {
+    padding-top: 20px;
+    padding-bottom: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    &__header {
+    }
+    &__labelInput-list {
+      .labelInput {
+        &__label {
+        }
+        &__input {
+        }
+      }
+      .labelTextarea {
+        &__label {
+        }
+        &__textarea {
+          height: 220px;
+        }
+      }
+    }
+    &__button {
+    }
+  }
+}
+
+@include screenSmallerThan($width: 481px) {
+  .form {
+    padding-left: 22px;
+    padding-right: 22px;
+    margin-left: auto;
+    margin-left: auto;
+    &__header {
+    }
+    &__labelInput-list {
+      .labelInput {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        &__label {
+        }
+        &__input {
+          height: 40px;
+        }
+      }
+      .labelTextarea {
+        &__label {
+        }
+        &__textarea {
+          height: 200px;
+        }
+      }
+    }
+    &__button {
+      width: 100%;
+      height: 40px;
+    }
+  }
+}
+
+//hover and focus state
+
+.form {
+  &__header {
+  }
+  &__labelInput-list {
+    .labelInput {
+      &__label {
+      }
+      &__input {
+        -webkit-appearance: none; //need this property in order for box-shadow to work on mobile
+        &:focus {
+          box-shadow: 0px 0px 0px 3px $primary-clr;
+          outline: none;
+          &::placeholder {
+            opacity: 0;
+          }
+        }
+      }
+    }
+    .labelTextarea {
+      &__label {
+      }
+      &__textarea {
+        -webkit-appearance: none; //need this property in order for box-shadow to work on mobile
+        &:focus {
+          box-shadow: 0px 0px 0px 3px $primary-clr;
+          outline: none;
+          &::placeholder {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+  &__button {
+  }
+}

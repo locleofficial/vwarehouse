@@ -1,0 +1,187 @@
+@use "../abstracts" as *;
+@use "../components" as *;
+@use "../core" as *;
+
+@mixin -slider_type_category() {
+  &__track-category {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    @include screenSmallerThan($width: 1201px) {
+      padding-top: 20px;
+      padding-bottom: 15px;
+    }
+    @include screenSmallerThan($width: 769px) {
+      padding-top: 15px;
+      padding-bottom: 10px;
+    }
+    @include screenSmallerThan($width: 481px) {
+      padding-top: 10px;
+    }
+    .category__slides {
+      .category__slide {
+        text-align: center;
+        .category__link {
+          color: $text_clr-dark;
+          .category__img {
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            object-position: center center;
+            width: 160px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            //border: 1px solid #0000001a;
+            box-shadow: 0px 0px 0px 1px #00000026;
+            margin-top: 1px; //need this attribute so that box-shadow won't get clipped out
+            margin-bottom: 1px; //need this attribute so that box-shadow won't get clipped out
+
+            @include screenSmallerThan($width: 1201px) {
+              width: 140px;
+              height: 140px;
+            }
+            @include screenSmallerThan($width: 769px) {
+              width: 100px;
+              height: 100px;
+            }
+            @include screenSmallerThan($width: 481px) {
+              width: 80px;
+              height: 80px;
+            }
+          }
+          .category__header {
+            text-transform: capitalize;
+            margin-top: 20px;
+            font-weight: weight("medium");
+            text-align: center;
+            @include screenSmallerThan($width: 769px) {
+              margin-top: 15px;
+            }
+            @include screenSmallerThan($width: 481px) {
+              margin-top: 7px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.glide-promote {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px rgb(220, 220, 220);
+  @include screenSmallerThan($width: 1201px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  @include screenSmallerThan($width: 481px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  &__top {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1.5px solid rgb(220, 220, 220);
+    @include screenSmallerThan($width: 1201px) {
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+    @include screenSmallerThan($width: 481px) {
+      border-bottom: 1px solid rgb(220, 220, 220);
+    }
+    .glide-promote__header {
+      width: max-content;
+      text-transform: capitalize;
+      font-weight: weight("medium");
+      color: $text_clr-dark;
+      margin-right: auto;
+    }
+    .glide-promote__arrows {
+      display: flex;
+      width: min-content;
+      margin-left: auto;
+      .glide-promote__arrow {
+        margin-left: 5px;
+      }
+    }
+  }
+  @include -slider_type_category();
+}
+
+.glide__arrow--disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  cursor: auto;
+}
+
+//html
+/*
+// slider_type_category()
+        <div class="glide-promote">
+            <div class="glide-promote__top">
+                <h3 class="glide-promote__header h3-default">hot categories</h3>
+                <div class="glide-promote__arrows" data-glide-el="controls">
+                    <button class="glide-promote__arrow btn-icon_animation_opacity" data-glide-dir="<"><span
+                            class="btn_type_icon-svg material-symbols-outlined">
+                            chevron_left
+                        </span></button>
+                    <button class="glide-promote__arrow btn-icon_animation_opacity" data-glide-dir=">"><span
+                            class="btn_type_icon-svg material-symbols-outlined">
+                            chevron_right
+                        </span></button>
+                </div>
+            </div>
+            <div class="glide-promote__track-category glide__track" data-glide-el="track">
+                <ul class="category__slides glide__slides">
+                    <li class="category__slide glide__slide">
+                        <a class="category__link" href="#">
+                            <img class="category__img" src="./img/croc-effect-bag .jpg" alt="">
+                            <p class="category__header txt-font-default">speaker</p>
+                        </a>
+                    </li>
+                    <li class="category__slide">
+                        <a class="category__link" href="#">
+                            <img class="category__img" src="./img/eva-shoulder-handbag .jpg" alt="">
+                            <p class="category__header txt-font-default">shoe</p>
+                        </a>
+                    </li>
+                    <li class="category__slide">
+                        <a class="category__link" href="#">
+                            <img class="category__img" src="./img/gabbi-ruched-hobo-handbag .jpg" alt="">
+                            <p class="category__header txt-font-default">tv</p>
+                        </a>
+                    </li>
+                    <li class="category__slide">
+                        <a class="category__link" href="#">
+                            <img class="category__img" src="./img/leather-bucket-bag .jpg" alt="">
+                            <p class="category__header txt-font-default">chair</p>
+                        </a>
+                    </li>
+                    <li class="category__slide">
+                        <a class="category__link" href="#">
+                            <img class="category__img" src="./img/lily-shoulder-bag .jpg" alt="">
+                            <p class="category__header txt-font-default">bag</p>
+                        </a>
+                    </li>
+                    <li class="category__slide">
+                        <a class="category__link" href="#">
+                            <img class="category__img" src="./img/maze-bag .jpg" alt="">
+                            <p class="category__header txt-font-default">watch</p>
+                        </a>
+                    </li>
+                    <li class="category__slide">
+                        <a class="category__link" href="#">
+                            <img class="category__img" src="./img/oval-short-handle-bag .jpg" alt="">
+                            <p class="category__header txt-font-default">table</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+*/

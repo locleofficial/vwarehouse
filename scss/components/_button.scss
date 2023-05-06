@@ -1,0 +1,242 @@
+@use "../abstracts" as *;
+@use "../core" as *;
+
+//Lato
+//"thin": 100,
+//"light": 300,
+//"regular": 400,
+//"bold": 700,
+
+//Poppins
+// "thin": 100,
+// "extra-light": 200,
+// "light": 300,
+// "regular": 400,
+// "medium": 500,
+// "semi-bold": 600,
+// "bold": 700,
+// "black": 900,
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.button {
+  display: block;
+  font-family: "Poppins", sans-serif;
+}
+
+.button_type_arrow {
+  $-button-size: 50px;
+  display: block;
+  cursor: pointer;
+  height: $-button-size;
+  width: $-button-size;
+  text-align: center;
+  border-radius: 50%;
+  font-family: "Poppins", monospace;
+  font-weight: weight("extra-light");
+  color: $text_clr-light;
+  background-color: $secondary_clr-dark;
+  transition: transform 150ms ease-out;
+  z-index: 0;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+  .arrow-icon_svg {
+    font-size: 35px;
+    line-height: $-button-size;
+  }
+  /*&::before {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: $secondary_clr-dark;
+    opacity: 1;
+    z-index: -1;
+  }*/
+  @include screenSmallerThan($width: 1201px) {
+    $-button-size: 45px;
+    height: $-button-size;
+    width: $-button-size;
+    .arrow-icon_svg {
+      font-size: 32px;
+      line-height: $-button-size;
+    }
+  }
+  @include screenSmallerThan($width: 769px) {
+    $-button-size: 40px;
+    height: $-button-size;
+    width: $-button-size;
+    .arrow-icon_svg {
+      font-size: 28px;
+      line-height: $-button-size;
+    }
+  }
+
+  &:hover {
+    transform: scale(0.92);
+    color: $primary_clr;
+  }
+}
+
+/*
+<button class="button_type_arrow"><span class="arrow-icon_svg material-symbols-outlined">chevron_left</span></button>
+<button class="button_type_arrow"><span class="arrow-icon_svg material-symbols-outlined">chevron_right</span></button>
+*/
+
+//----------------------------------------------------------------------------//
+
+.btn-default {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  overflow: hidden;
+  z-index: 0;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+  }
+}
+
+//------------------------------ btn_type_txt ------------------------------//
+.btn_type_txt {
+  $-btn_height: 50px;
+  @extend .btn-default;
+  height: $-btn_height;
+  border-radius: calc($-btn_height/2);
+  padding-left: 22px;
+  padding-right: 22px;
+  @include screenSmallerThan($width: 1201px) {
+    $-btn_height: 45px;
+    height: $-btn_height;
+    border-radius: calc($-btn_height/2);
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  @include screenSmallerThan($width: 481px) {
+    $-btn_height: 40px;
+    height: $-btn_height;
+    border-radius: calc($-btn_height/2);
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+//------ 1. scaleDown ------//
+//--- <button class="btn-txt_animation_scaleDown txt-font-default">Scale Down</button> ---//
+
+.btn-txt_animation_scaleDown {
+  $-btn_height: 50px;
+  @extend .btn-default;
+  @extend .btn_type_txt;
+  height: $-btn_height;
+  border-radius: calc($-btn_height/2);
+  //transition: transform 150ms ease-in-out;
+  @include screenSmallerThan($width: 1201px) {
+    $-btn_height: 45px;
+    height: $-btn_height;
+    border-radius: calc($-btn_height/2);
+  }
+  @include screenSmallerThan($width: 481px) {
+    $-btn_height: 40px;
+    height: $-btn_height;
+    border-radius: calc($-btn_height/2);
+  }
+  &::before {
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background-color: $primary-clr; //change
+    z-index: -1;
+  }
+}
+.btn-txt_animation_scaleDown {
+  &:hover {
+    box-shadow: 0 0 0 2px $secondary_clr-light;
+  }
+  &:active {
+    transform: scale(0.93);
+  }
+}
+
+//------------------------------ btn_type_arrow ------------------------------//
+
+.btn_type_icon {
+  $-btn_size: 50px;
+  @extend.btn-default;
+  width: $-btn_size;
+  height: $-btn_size;
+  line-height: $-btn_size;
+  border-radius: 50%;
+  color: $text_clr-light;
+  &-svg {
+    font-size: 35px;
+    line-height: $-btn_size;
+  }
+  @include screenSmallerThan($width: 1201px) {
+    $-btn_size: 45px;
+    height: $-btn_size;
+    width: $-btn_size;
+    &-svg {
+      font-size: 32px;
+      line-height: $-btn_size;
+    }
+  }
+  @include screenSmallerThan($width: 481px) {
+    $-btn_size: 40px;
+    width: $-btn_size;
+    height: $-btn_size;
+    &-svg {
+      font-size: 28px;
+      line-height: $-btn_size;
+    }
+  }
+}
+
+//------ 1. opacity ------//
+//--- <button class="btn-icon_animation_opacity" data-glide-dir="<"><span class="btn_type_icon-svg material-symbols-outlined">search</span></button> ---//
+.btn-icon_animation_opacity {
+  @extend.btn_type_icon;
+  color: black; //change
+  &::before {
+    top: 0;
+    left: 0;
+    opacity: 0.1;
+    background-color: rgb(200, 200, 200); //change
+    transition: opacity 100ms ease-in-out;
+    z-index: -1;
+  }
+}
+
+.btn-icon_animation_opacity {
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+  }
+  &:active {
+    transform: scale(0.9);
+  }
+}

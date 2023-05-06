@@ -1,0 +1,105 @@
+@use "../abstracts" as *;
+@use "../core" as *;
+@use "../components" as *;
+@use "../sections/hero" as *;
+@use "../sections/productGrid" as *;
+
+.home {
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px;
+  margin-bottom: 15px;
+  &-hero-grid {
+    margin-top: 0;
+    margin-bottom: 55px;
+  }
+  &-hotCategory-slide {
+    margin-top: 55px;
+    margin-bottom: 55px;
+  }
+  &-product-grid-slide {
+    margin-top: 55px;
+    margin-bottom: 0;
+    height: max-content;
+    .home-product-grid {
+      @include style-product-grid(
+        $cell_padding: 8px,
+        $card_maxWidth: 250px,
+        $max_cardPerRow: 5
+      );
+    }
+  }
+}
+
+@include screenSmallerThan($width: 1201px) {
+  .home {
+    padding: 15px;
+    margin-bottom: 10px;
+    &-hero-grid {
+      margin-bottom: 40px;
+    }
+    &-hotCategory-slide {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    &-product-grid-slide {
+      margin-top: 40px;
+      // margin-bottom: 0;
+    }
+  }
+}
+
+@include screenSmallerThan($width: 1025px) {
+  .home {
+    // padding: 15px;
+    // margin-bottom: 10px;
+    &-hero-grid {
+      margin-bottom: 30px;
+    }
+    &-hotCategory-slide {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    &-product-grid-slide {
+      margin-top: 30px;
+      // margin-bottom: 0;
+    }
+  }
+}
+
+@include screenSmallerThan($width: 769px) {
+  // .home {
+  //   // padding: 15px;
+  //   // margin-bottom: 10px;
+  //   &-hero-grid {
+  //     margin-bottom: 40px;
+  //   }
+  //   &-hotCategory-slide {
+  //     margin-top: 40px;
+  //     margin-bottom: 40px;
+  //   }
+  //   &-product-grid-slide {
+  //     margin-top: 40px;
+  //     margin-bottom: 0;
+  //   }
+  // }
+}
+
+@include screenSmallerThan($width: 481px) {
+  .home {
+    padding: max(2.15vw, 5px);
+    margin-bottom: 0px;
+    &-hero-grid {
+      //margin-bottom: 30px;
+    }
+    &-hotCategory-slide {
+      //margin-top: 30px;
+      //margin-bottom: 30px;
+    }
+    &-product-grid-slide {
+      //margin-top: 30px;
+      // margin-bottom: 0;
+    }
+  }
+}

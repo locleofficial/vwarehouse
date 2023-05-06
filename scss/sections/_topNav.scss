@@ -1,0 +1,576 @@
+@use "../abstracts" as *;
+@use "../core" as *;
+@use "../components" as *;
+
+//static not changing
+.topNav {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: $secondary_clr-dark;
+  z-index: 999; //sideNav z-index = 1000
+  overflow: visible;
+  .topNav__sideMenuToggle {
+    display: block;
+    position: relative;
+    min-width: 40px;
+    min-height: 40px;
+    color: $text_clr-light;
+    background-color: transparent;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 2px;
+      opacity: 0;
+      border: 1.5px solid $text_clr-light;
+      transition: opacity 100ms ease-in-out;
+    }
+    .sideMenu_icon-open {
+      display: block;
+    }
+  }
+  &__header {
+    display: block;
+    height: min-content;
+    .topNav__logo {
+    }
+  }
+  .searchBar {
+    position: relative;
+    overflow: visible;
+    width: 100%;
+    min-width: 250px;
+    height: 40px;
+    &__input {
+      width: 100%;
+      max-width: calc(100% - 40px);
+      height: 40px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 5px;
+      border-radius: 5px 0px 0px 5px;
+    }
+    &__submit {
+      min-width: 40px;
+      min-height: 40px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      &Icon {
+      }
+    }
+    //here//
+    .matchList {
+      position: absolute;
+      width: calc(100% - 40px);
+      max-height: 420px;
+      @include screenSmallerThan($width: 481px) {
+        max-height: 205px;
+        width: 100%;
+      }
+      background-color: white;
+      top: 45px;
+      //will-change: opacity;
+      overflow-y: auto;
+      overscroll-behavior-block: contain;
+      z-index: 999; //sideNav z-index = 1000
+      pointer-events: none;
+      opacity: 0;
+      .match-item-container {
+        .match-item {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 10px;
+          @include screenSmallerThan($width: 481px) {
+            padding: 7px;
+            min-height: 40px;
+          }
+          &__img {
+            display: block;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            width: 80px;
+            min-width: 80px;
+            max-width: 100%;
+            height: auto;
+          }
+          &__icon-svg {
+            font-size: 30px;
+            color: $text_clr-dark;
+          }
+          &__text {
+            margin-left: 15px;
+            @include screenSmallerThan($width: 481px) {
+              margin-left: 10px;
+            }
+            &-brand {
+              font-family: "Poppins", sans-serif;
+              letter-spacing: 0.5px;
+              font-weight: weight("semi-bold");
+              font-size: 14px;
+              color: hsl(39, 80%, 47%);
+              //color: hsl(217, 80%, 29%);
+              text-transform: capitalize;
+              padding-top: 1.5px;
+              padding-bottom: 3.5px;
+              @include screenSmallerThan($width: 481px) {
+                font-size: 12px;
+              }
+            }
+            &-name {
+              display: block;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              color: black;
+              padding-right: 5px;
+            }
+          }
+        }
+      }
+    }
+    //here//
+  }
+  &__linkBox {
+    display: flex;
+    .topNav__link {
+      display: block;
+      position: relative;
+      text-align: center;
+      height: 40px;
+      line-height: 37px;
+      border-radius: calc(40px / 2);
+      font-family: "Poppins", sans-serif;
+      font-weight: weight("light");
+      color: $text_clr-light;
+      border: 1px solid hsl(217, 27%, 45%);
+      overflow: hidden;
+      z-index: 0;
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none; /* Non-prefixed version, currently
+                                      supported by Chrome, Edge, Opera and Firefox */
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0.6;
+        transition: opacity 100ms ease-in-out;
+        z-index: -1;
+        background-color: $secondary_clr-light;
+      }
+    }
+  }
+  &-cover {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    //will-change: opacity; //leave out intentionally
+    background-color: black;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 50ms ease-out;
+  }
+}
+
+//dynamic changing according to screen sizes
+//All Screen Size and Extra Large Screen (1201px and more)
+
+//topNav
+$-topNav_height: 60px;
+
+//-sideMenuToggle
+$-sideMenu_icon-size: 40px;
+
+//-header
+//--logo
+$-logo_size: 47px;
+
+//-searchBar
+$-searchBar_text-size: 18px;
+$-searchBar_icon-size: 30px;
+
+//-linkBox
+$-button-font-size: 18px;
+
+.topNav {
+  height: $-topNav_height;
+  &__sideMenuToggle {
+    margin-right: 15px;
+    margin-left: 15px;
+    .sideMenu_icon-open {
+      font-size: $-sideMenu_icon-size;
+    }
+  }
+  &__header {
+    margin-bottom: 2px;
+    margin-right: 15px;
+    .topNav__logo {
+      height: $-logo_size;
+    }
+  }
+  .searchBar {
+    margin-right: 15px;
+    &__input {
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: $-searchBar_text-size;
+    }
+    &__submit {
+      &::before {
+      }
+      &Icon {
+        font-size: $-searchBar_icon-size;
+      }
+    }
+  }
+  &__linkBox {
+    .topNav__link {
+      font-size: $-button-font-size;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-right: 15px;
+    }
+  }
+}
+
+//Desktops and Large Screen (1025px - 1200px), Small Screens, laptops(769px - 1024px)  (1200px - 769px)
+@include screenSmallerThan($width: 1201px) {
+  //topNav
+  $-topNav_height: 60px;
+
+  //-sideMenuToggle
+  $-sideMenu_icon-size: 40px;
+
+  //-header
+  //--logo
+  $-logo_size: 44px;
+
+  //-searchBar
+  $-searchBar_text-size: 16px;
+  $-searchBar_icon-size: 30px;
+
+  //-linkBox
+  $-button-font-size: 16px;
+  .topNav {
+    height: $-topNav_height;
+    &__sideMenuToggle {
+      margin-right: max(10px, 1.26vw);
+      margin-left: max(10px, 1.26vw);
+      .sideMenu_icon-open {
+        //font-size: $-sideMenu_icon-size;
+      }
+    }
+    &__header {
+      //margin-bottom: 2px;
+      //margin-right: 15px;
+      .topNav__logo {
+        height: $-logo_size;
+      }
+    }
+    .searchBar {
+      //margin-right: 15px;
+      &__input {
+        //padding-inline: 12px;
+        font-size: $-searchBar_text-size;
+      }
+      &__submit {
+        &::before {
+        }
+        &Icon {
+          //font-size: $-searchBar_icon-size;
+        }
+      }
+    }
+    &__linkBox {
+      .topNav__link {
+        font-size: $-button-font-size;
+        padding-left: 18px;
+        padding-right: 18px;
+        margin-right: max(10px, 1.26vw);
+      }
+    }
+  }
+}
+
+//ipad and tablets (481px - 768px)
+@include screenSmallerThan($width: 769px) {
+  //topNav
+  $-topNav_height: auto;
+  //-sideMenuToggle
+  $-sideMenu_icon-size: 35px;
+
+  //-header
+  //--logo
+  $-logo_size: 40px; //40px 15.666
+
+  //-searchBar
+  $-searchBar_text-size: 14px;
+
+  //-linkBox
+  $-button-font-size: 14px;
+
+  .topNav {
+    flex-wrap: wrap;
+    height: $-topNav_height;
+    padding-top: 3px;
+    &__sideMenuToggle {
+      order: 1;
+      margin-right: max(5px, 1.3vw);
+      margin-left: max(5px, 1.3vw);
+      .sideMenu_icon-open {
+        font-size: $-sideMenu_icon-size;
+      }
+    }
+    &__header {
+      order: 2;
+      .topNav__logo {
+        height: $-logo_size;
+      }
+    }
+    .searchBar {
+      order: 4;
+      margin-top: 7px;
+      margin-bottom: 7px;
+      margin-left: 10px;
+      margin-right: 10px;
+      &__input {
+        font-size: $-searchBar_text-size;
+      }
+      &__submit {
+        &::before {
+        }
+        &Icon {
+        }
+      }
+    }
+    &__linkBox {
+      order: 3;
+      margin-left: auto;
+      .topNav__link {
+        font-size: $-button-font-size;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-right: max(5px, 1.5vw);
+      }
+    }
+  }
+}
+
+//mobile devices (320px - 480px)
+@include screenSmallerThan($width: 481px) {
+  .topNav {
+    &__linkBox {
+      .topNav_mobileLink-icon {
+        width: 40px;
+        height: 40px;
+        line-height: 45px;
+        border-radius: 0;
+        position: relative;
+        border: 0;
+        font-size: 0;
+        &::before {
+          display: none;
+        }
+        &::after {
+          font-family: "Material Icons";
+          content: attr(material_icon-name);
+          position: absolute;
+          display: block;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          font-size: 32px;
+        }
+      }
+    }
+  }
+}
+
+//hover
+.topNav {
+  &__sideMenuToggle {
+    &:hover::before {
+      opacity: 1;
+    }
+    .sideMenu_icon-open {
+    }
+  }
+  &__header {
+    .topNav__logo {
+    }
+  }
+  .searchBar {
+    &__input {
+    }
+    &__submit {
+      &::before {
+      }
+      &Icon {
+      }
+    }
+    .matchList {
+      .match-item-container {
+        .match-item:hover {
+          background-color: rgb(240, 240, 240);
+          &__img {
+          }
+          &__icon-svg {
+          }
+          &__text {
+            &-brand {
+            }
+            &-name {
+            }
+          }
+        }
+      }
+    }
+  }
+  &__linkBox {
+    .topNav__link {
+      //word button
+      &:hover::before {
+        opacity: 1;
+      }
+      @include screenSmallerThan($width: 481px) {
+        //symbol button
+        &:hover::after {
+          color: $primary-clr;
+        }
+      }
+    }
+  }
+}
+
+//focus
+.topNav {
+  &__sideMenuToggle {
+    &:focus {
+      outline: none;
+    }
+    &:focus::before {
+      opacity: 1;
+    }
+    .sideMenu_icon-open {
+    }
+  }
+  &__header {
+    .topNav__logo {
+    }
+  }
+  .searchBar {
+    &:focus-within {
+      //outline: 2.5px solid $primary-clr;
+      box-shadow: 0 0 0 2.5px $primary-clr;
+    }
+    &__input:focus {
+      outline: none;
+    }
+    &__submit {
+      &::before {
+      }
+      &Icon {
+      }
+    }
+  }
+  &__linkBox {
+    .topNav__link {
+      &:focus::before {
+        opacity: 1;
+      }
+      @include screenSmallerThan($width: 481px) {
+        //symbol button
+        &:focus::after {
+          color: $primary-clr;
+        }
+      }
+    }
+  }
+}
+//show cover when clicked on search input
+//show matchList when clicked on search input
+.topNavCover-active {
+  pointer-events: auto;
+  opacity: 0.6;
+}
+
+.matchList-active {
+  pointer-events: auto !important;
+  opacity: 1 !important;
+}
+
+//skeleton
+.topNav {
+  .topNav__sideMenuToggle {
+    &::before {
+    }
+    .sideMenu_icon-open {
+    }
+  }
+  &__header {
+    .topNav__logo {
+    }
+  }
+  .searchBar {
+    &__input {
+    }
+    &__submit {
+      &Icon {
+      }
+    }
+    //here//
+    .matchList {
+      .match-item-container {
+        .match-item {
+          &__img {
+          }
+          &__icon-svg {
+          }
+          &__text {
+            &-brand {
+            }
+            &-name {
+            }
+          }
+        }
+      }
+    }
+    //here//
+  }
+  &__linkBox {
+    .topNav__link {
+      &::before {
+      }
+    }
+  }
+  &-cover {
+  }
+}

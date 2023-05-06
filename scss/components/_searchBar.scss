@@ -1,0 +1,77 @@
+@use "../abstracts" as *;
+@use "../core" as *;
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: min-content;
+  border-radius: 5px;
+  overflow: hidden;
+  &__input {
+    display: block;
+    // max-width: calc(100% - 40px); //topNav desktop
+    // height: 40px; //topNav desktop
+    // padding-inline: 10px; //topNav desktop
+    font-family: "Poppins", sans-serif;
+    //font-size: 18px; //topNav desktop
+    text-overflow: ellipsis;
+  }
+  &__submit {
+    display: block;
+    position: relative;
+    // min-width: 40px; //topNav desktop
+    // min-height: 40px; //topNav desktop
+    cursor: pointer;
+    overflow: hidden;
+    margin-left: 0;
+    margin-right: 0;
+    z-index: 0;
+    &::before {
+      display: block;
+      position: absolute;
+      content: "";
+      min-width: 100%;
+      min-height: 100%;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      background-color: $primary-clr;
+      transition: opacity 100ms ease-in-out;
+      opacity: 1;
+    }
+    &Icon {
+      display: block;
+      //font-size: 30px; //topNav desktop
+      z-index: 1;
+    }
+  }
+}
+
+//active
+.searchBar {
+  &__input {
+  }
+  &__submit {
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}
+
+//focus
+.searchBar {
+  &__input {
+    &:focus::placeholder {
+      color: transparent;
+    }
+  }
+  &__submit {
+    &:focus {
+      outline: none;
+    }
+    &:focus::before {
+      opacity: 1;
+    }
+  }
+}

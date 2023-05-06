@@ -1,0 +1,164 @@
+@use "../abstracts" as *;
+@use "../core" as *;
+@use "../components" as *;
+
+// this hero.scss belong to home.html
+
+.home {
+  .home-hero-grid {
+    display: grid;
+    grid-template-areas:
+      "mainHero mainHero mainHero subHero01"
+      "mainHero mainHero mainHero  subHero02";
+    grid-auto-rows: min(300px, 17.86vw);
+    gap: 25px;
+    &__main-hero {
+      grid-area: mainHero;
+      .home-hero {
+        background-image: url("/image/heroImage/handTool-mod.jpg");
+        background-position: center bottom;
+        &__main-header {
+          color: $text_clr-light;
+          width: max-content;
+          margin-right: auto;
+          &-title {
+            padding-top: 0.5em;
+            padding-left: 1em;
+            padding-right: 1em;
+            line-height: 1.3;
+            @supports not (
+              font-size: clamp(1.25rem, 0.8971rem + 1.7647vw, 2.75rem)
+            ) {
+              font-size: min(max(1.25rem, 0.8971rem + 1.7647vw), 2.75rem);
+            }
+            font-size: clamp(1.25rem, 0.8971rem + 1.7647vw, 2.75rem);
+            &-shopNow {
+              font-weight: weight("regular");
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    &__sub-hero01 {
+      grid-area: subHero01;
+      .home-hero {
+        background-image: url("/image/heroImage/safetyCollections-mod.jpg");
+        background-position: left bottom;
+        &__sub01-header {
+          color: $text_clr-light;
+          width: min-content;
+          margin-left: auto;
+          &-title {
+            width: min-content;
+            direction: rtl;
+            padding-top: 0.55em;
+            padding-left: 1.07em;
+            padding-right: 1.07em;
+            line-height: 1.3;
+            @supports not (
+              font-size: clamp(1.125rem, 0.5974rem + 1.0977vw, 1.75rem)
+            ) {
+              font-size: min(max(1.125rem, 0.5974rem + 1.0977vw), 1.75rem);
+            }
+            font-size: clamp(1.125rem, 0.5974rem + 1.0977vw, 1.75rem);
+            &-shopNow {
+              font-weight: weight("regular");
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    &__sub-hero02 {
+      grid-area: subHero02;
+      .home-hero {
+        background-image: url("/image/heroImage/electricallyPowered-mod.jpg");
+        background-position: center bottom;
+        &__sub02-header {
+          color: $text_clr-light;
+          width: min-content;
+          margin-right: auto;
+          &-title {
+            width: min-content;
+            padding-top: 0.55em;
+            padding-left: 1.07em;
+            padding-right: 1.07em;
+            line-height: 1.3;
+            @supports not (
+              font-size: clamp(1.125rem, 0.5974rem + 1.0977vw, 1.75rem)
+            ) {
+              font-size: min(max(1.125rem, 0.5974rem + 1.0977vw), 1.75rem);
+            }
+            font-size: clamp(1.125rem, 0.5974rem + 1.0977vw, 1.75rem);
+            &-shopNow {
+              font-weight: weight("regular");
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include screenSmallerThan($width: 1201px) {
+  .home {
+    .home-hero-grid {
+      display: grid;
+      grid-template-areas:
+        "mainHero mainHero mainHero subHero01"
+        "mainHero mainHero mainHero subHero02";
+      grid-auto-rows: min(300px, 17.86vw);
+      gap: 15px;
+    }
+  }
+}
+
+@include screenSmallerThan($width: 1025px) {
+  .home {
+    .home-hero-grid {
+    }
+  }
+}
+
+@include screenSmallerThan($width: 769px) {
+  .home {
+    .home-hero-grid {
+      display: grid;
+      grid-template-areas:
+        "mainHero mainHero"
+        "subHero01 subHero02";
+      grid-auto-rows: min(52.02vw, 400px) min(26.05vw, 200px);
+      //gap: 15px;
+    }
+  }
+}
+
+@include screenSmallerThan($width: 481px) {
+  .home {
+    .home-hero-grid {
+      display: grid;
+      grid-template-areas:
+        "mainHero"
+        "subHero01"
+        "subHero02";
+      grid-auto-rows: min(46.7vw, 220px);
+      gap: 10px;
+    }
+  }
+}
+
+//common block
+.home-hero {
+  width: 100%;
+  height: 100%;
+  background-color: $secondary_clr-dark;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  transition: transform 150ms ease-out;
+}
+.home-hero:hover {
+  transform: scale(1.03);
+}

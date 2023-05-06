@@ -1,0 +1,574 @@
+@use "../abstracts" as *;
+@use "../core" as *;
+@use "../components" as *;
+
+//static not changing
+.sideNav-container {
+  position: fixed;
+  top: 0; //will add this property again in js  sideNav.js because safari does not support inset: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  //will-change: opacity;
+  z-index: 1000; //topNav z-index = 999
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-in-out;
+  .sideNav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    box-shadow: 0 0 4px 0px rgb(88, 88, 88);
+    z-index: 1000; //topNav z-index = 999
+    transition: transform 300ms ease-out;
+    background-color: white;
+    &__sideMenuToggle {
+      display: block;
+      position: absolute;
+      top: 10px;
+      left: calc(100% + 10px);
+      color: $text_clr-light;
+      opacity: 1;
+      background-color: transparent;
+      cursor: pointer;
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none; /* Non-prefixed version, currently
+                                      supported by Chrome, Edge, Opera and Firefox */
+      .sideMenu_icon-close {
+        font-size: 40px;
+        display: block;
+      }
+    }
+    &__header {
+      background-color: $secondary_clr-medium;
+      .sideNav__logo {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    .sideNav__body {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      .menuList_hold_mainOption {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        .mainOption_title {
+          justify-content: flex-start;
+        }
+        .mainOption {
+          -webkit-touch-callout: none; /* iOS Safari */
+          -webkit-user-select: none; /* Safari */
+          -khtml-user-select: none; /* Konqueror HTML */
+          -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                          supported by Chrome, Edge, Opera and Firefox */
+          &__icon {
+            margin-right: auto;
+          }
+          &__text {
+            margin-right: auto;
+          }
+          &__arrow {
+          }
+          &::after {
+            //underline for mainOption fix so that underline became centered
+            /*display: block;
+            content: "";
+            position: absolute;
+            left: calc(10% / 2);
+            bottom: 0;
+            width: 90%;
+            height: 1px;
+            background-color: rgb(233, 233, 233); //#cccc*/
+          }
+        }
+      }
+      .menuList_hold_subOption {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: white;
+        .homeOption {
+          justify-content: start;
+          -webkit-touch-callout: none; /* iOS Safari */
+          -webkit-user-select: none; /* Safari */
+          -khtml-user-select: none; /* Konqueror HTML */
+          -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                          supported by Chrome, Edge, Opera and Firefox */
+          &__icon {
+          }
+          &__text {
+            text-transform: uppercase;
+            font-weight: weight("bold");
+          }
+          &::after {
+            //underline for mainOption fix so that underline became centered
+            /*display: block;
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background-color: rgb(233, 233, 233); //#cccc*/
+          }
+        }
+        .subOption_title {
+          &_icon {
+            position: absolute;
+            opacity: 1;
+          }
+        }
+        .subOption {
+          -webkit-touch-callout: none; /* iOS Safari */
+          -webkit-user-select: none; /* Safari */
+          -khtml-user-select: none; /* Konqueror HTML */
+          -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                          supported by Chrome, Edge, Opera and Firefox */
+          &__text {
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
+    }
+  }
+  .sideNav-cover {
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+  }
+}
+
+//common block share with menulist and submenulist
+.menuList {
+  will-change: transform;
+  .menuItem {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: $text_clr-dark;
+    z-index: 0;
+    &__icon {
+      display: block;
+      opacity: 0.5;
+    }
+    &__text {
+      font-family: "Poppins", sans-serif;
+      font-weight: weight("regular");
+    }
+    &__arow {
+      display: block;
+      opacity: 0.5;
+    }
+    &__title {
+      pointer-events: none;
+      height: auto;
+    }
+    &__title-text {
+      font-family: "Poppins", sans-serif;
+      font-weight: weight("semi-bold");
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      box-sizing: border-box;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: rgb(233, 233, 233);
+      opacity: 0;
+      transition: opacity 100ms ease-in-out;
+    }
+  }
+}
+
+.sideNav li {
+  margin-bottom: 2px;
+}
+
+//sideNav
+$-sideNav__width: 365px;
+
+//sideNav__header
+$-logo__size: 65px;
+
+//mainOption
+$-mainOption__gap_left-right: 15px;
+
+//mainOption text and subOption text size
+$-font-size: 18px;
+
+.sideNav-container {
+  .sideNav {
+    min-width: $-sideNav__width;
+    &__sideMenuToggle {
+      top: 10px;
+      left: calc(100% + 10px);
+      .sideMenu_icon-close {
+      }
+    }
+    &__header {
+      padding-top: 20px;
+      padding-bottom: 45px;
+      .sideNav__logo {
+        height: 65px;
+      }
+    }
+    .sideNav__body {
+      .menuList_hold_mainOption {
+        //margin-top: 9px;
+        .mainOption_title {
+          justify-content: flex-start;
+          padding-left: calc(10% / 2);
+        }
+        .mainOption {
+          &__icon {
+            font-size: 35px;
+            margin-left: calc(7px + $-mainOption__gap_left-right);
+          }
+          &__text {
+            font-size: $-font-size;
+            margin-left: -7px;
+          }
+          &__arrow {
+            font-size: 32px;
+            margin-right: $-mainOption__gap_left-right;
+          }
+        }
+      }
+      .menuList_hold_subOption {
+        .homeOption {
+          &__icon {
+            font-size: 28px;
+            margin-left: 20px;
+            margin-right: 10px;
+          }
+          &__text {
+            font-size: 14px;
+          }
+        }
+        .subOption_title {
+          &_icon {
+            font-size: 34px;
+            left: 27px;
+          }
+        }
+        .subOption {
+          &__text {
+            font-size: $-font-size;
+          }
+        }
+      }
+    }
+  }
+}
+
+//common block share with menulist and submenulist
+.menuList {
+  .menuItem {
+    min-height: 50px;
+    &__title {
+      padding-top: 13px; //media
+      padding-bottom: 7px; //media
+    }
+    &__title-text {
+      font-size: 20px; //media
+    }
+  }
+}
+
+//Desktops and Large Screen (1025px - 1200px), Small Screens, laptops(769px - 1024px), ipad and tablets (481px - 768px)  -> (1200px - 481px);
+@include screenSmallerThan($width: 1201px) {
+  //sideNav
+  $-sideNav__width: 325px;
+
+  //sideNav__header
+  $-logo__size: 65px;
+
+  //mainOption
+  $-mainOption__gap_left-right: 15px;
+
+  //mainOption text and subOption text size
+  $-font-size: 16px;
+
+  .sideNav-container {
+    .sideNav {
+      min-width: $-sideNav__width;
+      &__sideMenuToggle {
+        top: 10px;
+        left: calc(100% + 10px);
+        .sideMenu_icon-close {
+        }
+      }
+      &__header {
+        padding-top: 18px;
+        padding-bottom: 40px;
+        .sideNav__logo {
+          height: 58px;
+        }
+      }
+      .sideNav__body {
+        .menuList_hold_mainOption {
+          //margin-top: 8px;
+          .mainOption {
+            &__icon {
+              font-size: 31px;
+              margin-left: calc(6px + $-mainOption__gap_left-right);
+            }
+            &__text {
+              font-size: $-font-size;
+              margin-left: -6px;
+            }
+            &__arrow {
+              font-size: 28px;
+              margin-right: $-mainOption__gap_left-right;
+            }
+          }
+        }
+        .menuList_hold_subOption {
+          .homeOption {
+            &__icon {
+              font-size: 26px;
+              margin-left: 19px;
+              margin-right: 9px;
+            }
+            &__text {
+              font-size: 13px;
+            }
+          }
+          .subOption_title {
+            &_icon {
+              font-size: 32px;
+              left: 24px;
+            }
+          }
+          .subOption {
+            &__text {
+              font-size: $-font-size;
+            }
+          }
+        }
+      }
+    }
+  }
+  //common block share with menulist and submenulist
+  .menuList {
+    .menuItem {
+      &__title {
+        padding-top: 12px; //media
+        padding-bottom: 7px; //media
+      }
+      &__title-text {
+        font-size: 18px; //media
+      }
+    }
+  }
+}
+
+@include screenSmallerThan($width: 769px) {
+  //sideNav
+  $-sideNav__width: 300px;
+
+  .sideNav-container {
+    .sideNav {
+      min-width: $-sideNav__width;
+    }
+  }
+  //common block share with menulist and submenulist
+  .menuList {
+    .menuItem {
+      &__title {
+        padding-top: 12px; //media
+        padding-bottom: 7px; //media
+      }
+      &__title-text {
+        font-size: 18px; //media
+      }
+    }
+  }
+}
+
+//mobile devices (320px - 480px)
+@include screenSmallerThan($width: 481px) {
+  //sideNav
+  $-sideNav__width: 270px;
+
+  //sideNav__header
+  $-logo__size: 65px;
+
+  //mainOption
+  $-mainOption__gap_left-right: 18px;
+
+  //mainOption text and subOption text size
+  $-font-size: 14px;
+
+  .sideNav-container {
+    .sideNav {
+      min-width: $-sideNav__width;
+      &__sideMenuToggle {
+        top: 5px;
+        left: calc(100% + 5px);
+        .sideMenu_icon-close {
+        }
+      }
+      &__header {
+        padding-top: 15px;
+        padding-bottom: 35px;
+        .sideNav__logo {
+          height: 50px;
+        }
+      }
+    }
+    .sideNav__body {
+      .menuList_hold_mainOption {
+        .mainOption_title {
+          justify-content: flex-start;
+          padding-left: calc(12% / 2);
+        }
+        .mainOption {
+          &__icon {
+            font-size: 27px;
+            margin-left: calc(3px + $-mainOption__gap_left-right);
+          }
+          &__text {
+            font-size: $-font-size;
+            margin-left: 0px;
+          }
+          &__arrow {
+            font-size: 25px;
+            margin-right: $-mainOption__gap_left-right;
+          }
+          &::after {
+            /*left: calc(12% / 2);
+            bottom: 0;
+            width: 88%;
+            height: 1px;
+            background-color: rgb(233, 233, 233); //#cccc*/
+          }
+        }
+      }
+      .menuList_hold_subOption {
+        .homeOption {
+          &__icon {
+            font-size: 24px;
+            margin-left: 18px;
+            margin-right: 8px;
+          }
+          &__text {
+            font-size: 12px;
+          }
+        }
+        //start here
+        .subOption_title {
+          &_icon {
+            font-size: 28px;
+            left: 25px;
+          }
+        }
+        .subOption {
+          &__text {
+            font-size: $-font-size;
+          }
+        }
+      }
+    }
+  }
+
+  //common block share with menulist and submenulist
+  .menuList {
+    .menuItem {
+      min-height: 45px;
+      &__title {
+        padding-top: 11px; //media
+        padding-bottom: 6px; //media
+      }
+      &__title-text {
+        font-size: 16px; //media
+      }
+    }
+  }
+}
+
+//hover state
+.menuList {
+  .menuItem:hover {
+    .menuItem__icon {
+      opacity: 1;
+    }
+    .menuItem__text {
+    }
+    .menuItem__arow {
+      opacity: 1;
+    }
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.menuList_hold_mainOption {
+  transform: translateX(0%);
+  transition: transform 200ms linear;
+}
+.menuList_hold_subOption {
+  transform: translateX(100%);
+  transition: transform 200ms linear;
+}
+
+//slide left
+.menuList_translateX_left {
+  transform: translateX(-100%);
+}
+//slide center
+.menuList_translateX {
+  transform: translateX(0%);
+}
+
+.sideNav_translateX_right {
+  transform: translateX(100%);
+}
+
+//toggling sideNav
+.sideNav[data-visible="false"] {
+  transform: translateX(-120%);
+}
+
+.sideNav[data-visible="true"] {
+  transform: translateX(0%);
+}
+
+//show sideNav when hamburger button is clicked
+.sideNav-active {
+  opacity: 1;
+  pointer-events: auto;
+}

@@ -1,0 +1,413 @@
+@use "../abstracts" as *;
+@use "../core" as *;
+@use "../components" as *;
+
+//Lato fonts weight
+/*
+ thin: 100
+ light: 300
+ regular: 400
+ bold: 700
+*/
+
+//schedule
+$-logo_size: 180px;
+
+.contact-section {
+  width: 100vw;
+  &__hero {
+    width: 100%;
+    background-color: $secondary_clr-dark;
+    background-image: url("/image/heroImage/city.jpg");
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    .hero-flex {
+      display: flex;
+      padding-top: 33px;
+      padding-bottom: 77px;
+      flex-wrap: wrap;
+      &__item-schedule {
+        width: 50%;
+        .hero-schedule-box {
+          width: min-content;
+          margin-left: auto;
+          margin-right: auto;
+          .hero-header {
+            .hero-header__logo {
+              height: $-logo_size;
+              margin-left: auto;
+              margin-right: auto;
+            }
+          }
+          .hero-schedule {
+            &__dayTime-list {
+            }
+          }
+        }
+      }
+      &__item-contact-form {
+        width: 50%;
+        .contact-form {
+        }
+      }
+    }
+  }
+
+  //working here
+  &__details {
+    width: 100%;
+    background-color: white;
+    .details-flex {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-wrap: wrap;
+      padding-top: 60px; //3 x 30, 3 x 20
+      padding-bottom: 84px; // 7 x 20, 7 x 10
+      margin-left: 6vw;
+      margin-left: 6vw;
+
+      &__item {
+        width: 33.333%;
+        .subject {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          //margin-block: 50px;
+          margin-left: 1.2vw;
+          margin-right: 1.2vw;
+          &__icon-svg {
+            font-size: 80px;
+            color: $primary-clr;
+            font-variation-settings: "FILL" 1, "wght" 500, "GRAD" 0, "opsz" 48;
+            margin-bottom: 7px;
+          }
+          &__header {
+            text-transform: uppercase;
+            font-weight: weight("regular");
+            color: rgb(50, 50, 50);
+            margin-top: 1.5px;
+            margin-bottom: 3.5px;
+          }
+          &__description {
+            font-weight: weight("light");
+            color: rgb(130, 130, 130);
+            max-width: 35ch;
+            text-align: center;
+            margin-bottom: 7px;
+            .schedule {
+              white-space: nowrap;
+            }
+          }
+          address {
+            text-align: center;
+            margin-top: 3px;
+            .subject__link {
+              color: $primary-clr;
+              font-weight: weight("light");
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include screenSmallerThan($width: 1501px) {
+  $-logo_size: 155px;
+
+  .contact-section {
+    &__hero {
+      .hero-flex {
+        &__item-schedule {
+          width: 45%;
+          .hero-schedule-box {
+            .hero-header {
+              .hero-header__logo {
+                height: $-logo_size;
+              }
+            }
+            .hero-schedule {
+              &__dayTime-list {
+              }
+            }
+          }
+        }
+        &__item-contact-form {
+          width: 55%;
+          .contact-form {
+            width: 90%;
+          }
+        }
+      }
+    }
+    //nothing changed in "&__details"
+    &__details {
+      .details-flex {
+        &__item {
+          .subject {
+            &__icon-svg {
+            }
+            &__header {
+            }
+            &__description {
+              .schedule {
+              }
+            }
+            address {
+              .subject__link {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include screenSmallerThan($width: 1201px) {
+  $-logo_size: 135px;
+
+  .contact-section {
+    &__hero {
+      .hero-flex {
+        &__item-schedule {
+          .hero-schedule-box {
+            .hero-header {
+              .hero-header__logo {
+                height: $-logo_size;
+              }
+            }
+            .hero-schedule {
+              &__dayTime-list {
+              }
+            }
+          }
+        }
+        &__item-contact-form {
+          .contact-form {
+          }
+        }
+      }
+    }
+    &__details {
+      .details-flex {
+        padding-top: 51px; //3 x 17 changed
+        padding-bottom: 77px; // 7 x 11 changed
+        &__item {
+          .subject {
+            &__icon-svg {
+              font-size: 72px;
+              margin-bottom: 6px;
+            }
+            &__header {
+            }
+            &__description {
+              margin-bottom: 6px;
+              .schedule {
+              }
+            }
+            address {
+              margin-top: 1.5px;
+              .subject__link {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include screenSmallerThan($width: 1025px) {
+  $-logo_size: 100px;
+
+  .contact-section {
+    &__hero {
+      .hero-flex {
+        &__item-schedule {
+          .hero-schedule-box {
+            .hero-header {
+              .hero-header__logo {
+                height: $-logo_size;
+              }
+            }
+            .hero-schedule {
+              &__dayTime-list {
+              }
+            }
+          }
+        }
+        &__item-contact-form {
+          .contact-form {
+            width: 95%;
+          }
+        }
+      }
+    }
+    &__details {
+      .details-flex {
+        padding-top: 45px; //3 x 15  = 45 changed
+        padding-bottom: 70px; // 7 x 10 changed
+        &__item {
+          width: 50%;
+          .subject {
+            margin: 14px;
+            &__icon-svg {
+            }
+            &__header {
+            }
+            &__description {
+              .schedule {
+              }
+            }
+            address {
+              .subject__link {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include screenSmallerThan($width: 769px) {
+  .contact-section {
+    &__hero {
+      .hero-flex {
+        padding-top: 9px;
+        padding-bottom: 49px;
+        &__item-schedule {
+          width: 100%;
+          .hero-schedule-box {
+            margin-bottom: 35px;
+            .hero-header {
+              .hero-header__logo {
+              }
+            }
+            .hero-schedule {
+              &__dayTime-list {
+              }
+            }
+          }
+        }
+        &__item-contact-form {
+          width: 100%;
+          .contact-form {
+            width: 95%;
+          }
+        }
+      }
+    }
+    &__details {
+      .details-flex {
+        &__item {
+          width: 100%;
+          .subject {
+            margin: 21px;
+            &__icon-svg {
+            }
+            &__header {
+            }
+            &__description {
+              .schedule {
+              }
+            }
+            address {
+              .subject__link {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include screenSmallerThan($width: 481px) {
+  $-logo_size: 85px;
+
+  .contact-section {
+    &__hero {
+      background-image: none;
+      .hero-flex {
+        padding-top: 6px;
+        padding-bottom: 42px;
+        &__item-schedule {
+          .hero-schedule-box {
+            .hero-header {
+              .hero-header__logo {
+                height: $-logo_size;
+              }
+            }
+            .hero-schedule {
+              &__dayTime-list {
+              }
+            }
+          }
+        }
+        &__item-contact-form {
+          .contact-form {
+            background-color: $secondary_clr-medium;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+    &__details {
+      .details-flex {
+        padding-top: 36px; //3 x 12  = 45 changed
+        padding-bottom: 63px; // 7 x 9 = 63 changed
+
+        &__item {
+          .subject {
+            margin: 14px;
+            &__icon-svg {
+              font-size: 55px;
+              margin-bottom: 5px;
+            }
+            &__header {
+            }
+            &__description {
+              margin-bottom: 5px;
+              .schedule {
+              }
+            }
+            address {
+              .subject__link {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//skeleton
+.contact-section {
+  &__hero {
+    .hero-flex {
+      &__item-schedule {
+        .hero-schedule-box {
+          .hero-header {
+            .hero-header__logo {
+            }
+          }
+          .hero-schedule {
+            &__dayTime-list {
+            }
+          }
+        }
+      }
+      &__item-contact-form {
+        .contact-form {
+        }
+      }
+    }
+  }
+}

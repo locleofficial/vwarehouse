@@ -1,0 +1,73 @@
+@use "../abstracts" as *;
+
+//Poppins
+$font-weight: (
+  "thin": 100,
+  "extra-light": 200,
+  "light": 300,
+  "regular": 400,
+  "medium": 500,
+  "semi-bold": 600,
+  "bold": 700,
+  "black": 900,
+);
+//Lato
+//"thin": 100,
+//"light": 300,
+//"regular": 400,
+//"bold": 700,
+
+@function weight($weight-name) {
+  @return map-get($font-weight, $weight-name);
+}
+
+.default-font {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  line-height: 1.6;
+}
+
+.h1-default {
+  @extend .default-font;
+  font-size: 43.945px; // 35.156px x 1.25
+  @include screenSmallerThan($width: 1201px) {
+    font-size: 35.156px; // 28.125 x 1.25
+  }
+  @include screenSmallerThan($width: 481px) {
+    font-size: 28.125px; // 2.5 x 1.25
+  }
+}
+
+.h2-default {
+  @extend .default-font;
+  font-size: 28.125px; // 20 x 1.25
+  @include screenSmallerThan($width: 1201px) {
+    font-size: 22.5px; // 18 x 1.25
+  }
+  @include screenSmallerThan($width: 481px) {
+    font-size: 20px; // 16 x 1.25
+  }
+}
+
+.h3-default {
+  @extend .default-font;
+  font-size: 22.5px; // 18 x 1.25
+  @include screenSmallerThan($width: 1201px) {
+    font-size: 20px; // 16 x 1.25
+  }
+  @include screenSmallerThan($width: 481px) {
+    font-size: 17.5px; // 14 x 1.25
+  }
+}
+
+.txt-font-default {
+  @extend .default-font;
+  font-size: 18px;
+  @include screenSmallerThan($width: 1201px) {
+    font-size: 16px; // 16 x 1.25
+  }
+  @include screenSmallerThan($width: 481px) {
+    font-size: 14px; // 14 x 1.25
+  }
+}

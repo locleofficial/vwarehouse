@@ -1,0 +1,16 @@
+@mixin screenSmallerThan($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+@mixin screenBiggerThan($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin screenBetween($minWidth, $maxWidth) {
+  @media only screen and (min-width: $minWidth) and (max-width: $maxWidth) {
+    @content;
+  }
+}

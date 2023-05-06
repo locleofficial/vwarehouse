@@ -1,0 +1,10 @@
+@use "../abstracts" as *;
+@use "../core" as *;
+
+$-logo_size: 47px;
+
+.logo {
+  display: block;
+  height: $-logo_size;
+  width: auto;
+}

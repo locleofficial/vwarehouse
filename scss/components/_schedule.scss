@@ -1,0 +1,122 @@
+@use "../abstracts" as *;
+@use "../core" as *;
+
+$-font-size: 31.25px;
+
+.schedule {
+  display: flex;
+  flex-direction: rows;
+  justify-content: flex-start;
+  align-items: stretch;
+  &__icon {
+    &-svg {
+      color: $primary-clr;
+      font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 200, "opsz" 48;
+      font-size: calc(1.5 * $-font-size);
+      margin-top: 7px;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
+  &__dayTime-list {
+    font-family: "Poppins", sans-serif;
+    font-weight: weight("medium");
+    color: white;
+    font-size: $-font-size; //39.0625 //31.25px //25px //20px //16px
+    .dayTime {
+      margin-top: 7px;
+      margin-bottom: 7px;
+      &__day {
+      }
+      &__time {
+      }
+    }
+  }
+}
+@include screenSmallerThan($width: 1201px) {
+  $-font-size: 25px;
+  .schedule {
+    &__icon {
+      &-svg {
+        margin-top: 5px;
+        font-size: calc(1.5 * $-font-size);
+        margin-left: 12px;
+        margin-right: 12px;
+      }
+    }
+    &__dayTime-list {
+      font-size: $-font-size;
+      .dayTime {
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        &__day {
+        }
+        &__time {
+        }
+      }
+    }
+  }
+}
+
+@include screenSmallerThan($width: 1025px) {
+  $-font-size: 21px;
+  .schedule {
+    &__icon {
+      &-svg {
+        margin-top: 7px;
+        font-size: calc(1.5 * $-font-size);
+      }
+    }
+    &__dayTime-list {
+      font-size: $-font-size;
+      .dayTime {
+        margin-top: 7px;
+        margin-bottom: 7px;
+        &__day {
+        }
+        &__time {
+        }
+      }
+    }
+  }
+}
+
+@include screenSmallerThan($width: 481px) {
+  $-font-size: 18px;
+  .schedule {
+    &__icon {
+      &-svg {
+        margin-top: 3px;
+        margin-left: 8px;
+        margin-right: 8px;
+        font-size: calc(1.5 * $-font-size);
+      }
+    }
+    &__dayTime-list {
+      font-size: $-font-size;
+      .dayTime {
+        margin-top: 3px;
+        margin-bottom: 3px;
+        &__day {
+        }
+        &__time {
+        }
+      }
+    }
+  }
+}
+
+//HTML
+/*
+<div class="schedule">
+    <div class="schedule__icon">
+        <span class="schedule__icon-svg"></span>
+    </div>
+    <ul class="schedule__dayTime-list">
+        <li class="dayTime">
+            <span class="dayTime__day">Mon:</span> <span class="dayTime__time">9:00AM-5:00PM</span>
+        </li>
+    </ul>
+</div>
+*/
