@@ -13,7 +13,7 @@
 <div>
   <h3>Carousel Slider</h3>
   <p>
-I built this carousel using a free API from a team of MIT students called glideJS. 
+This carousel was built using a free API from a team of MIT students called glideJS. 
 More information about this beautiful lightweight API can be found here at <a href="https://glidejs.com/">https://glidejs.com/</a>.
   </p>
   <div align="center">
