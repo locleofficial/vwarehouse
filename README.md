@@ -2,7 +2,12 @@
 
 <div>
   <h3>Auto Complete Search Bar</h3>
-  <img src="https://github.com/locleofficial/vwarehouse/blob/main/ResizedDemoImage/0-autoComplete.png" width="265" height="500">
+  <p>
+  This search bar, basically takes the user’s consecutive letters of input then return the results base on the category of the items available within a JSON file. The category includes the item’s: name, type, and brand. This method is achieved through filtering out an array of items within the JSON file, with the regex expression <code>(`^${searchText}`)</code> we’re able to return items within the JSON file that matched the user’s search input.
+  </p>
+  <div align="center">
+    <img src="https://github.com/locleofficial/vwarehouse/blob/main/ResizedDemoImage/0-autoComplete.png" width="265" height="500">
+  </div>
 <div>
 
 <div align="center">
