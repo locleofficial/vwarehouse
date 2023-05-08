@@ -14,7 +14,7 @@
   <h3>Carousel Slider</h3>
   <p>
 I built this carousel using a free API from a team of MIT students called glideJS. 
-More information about this beautiful lightweight API can be found here at <a href="https://glidejs.com/" target="_blank">https://glidejs.com/</a>.
+More information about this beautiful lightweight API can be found here at <a href="https://glidejs.com/">https://glidejs.com/</a>.
   </p>
   <div align="center">
     <img src="https://github.com/locleofficial/vwarehouse/blob/main/ResizedDemoImage/0-carouselSlider.png" width="265" height="500">
