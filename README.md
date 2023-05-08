@@ -1,5 +1,10 @@
 # vwarehouse
 
+<div>
+  <h3>Auto Complete Search Bar</h3>
+  <img src="https://github.com/locleofficial/vwarehouse/blob/main/ResizedDemoImage/0-autoComplete.png" width="265" height="500">
+<div>
+
 <div align="center">
   <h2>1. HOME PAGE</h2>
   <div align="center">
